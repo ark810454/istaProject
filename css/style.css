@@ -81,12 +81,20 @@ h1{
     cursor: pointer;
     display: flex;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: center!important;
     justify-content: center;
     gap: 5px;
     font-family: var(--inter);
     font-weight: 300;
+
   }
+  .links ul li a span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
   .links ul li{
     display: flex;
     flex-wrap: nowrap;
@@ -107,9 +115,9 @@ h1{
   
   }
   .links ul li a svg{
-    width: 20px;
-    height: 20px;
-  
+    width: 14px;
+    height: 14px;
+    margin-top:1px;
   }
   
   #items1, #items3, #items2{
@@ -218,4 +226,251 @@ h1{
    transform : scale(1.3);
   }
   /* fin navbar */
+
+
+
+  /* debut footer */
+.footer{
+    width: 100%;
+    margin-top: 100px;
+    position: relative;
+    bottom: 0;
+    height: max-content;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+  }
+  .footertitle{
+    background:  linear-gradient(to right bottom, var(--primary) 40%, var(--secondary), var(--tertiary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    left: 10%;
+    font-size: 20px;
+    font-family: var(--inter);
+    font-weight: 600;
+    padding: 20px 0 0 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: left;
+    
+  }
+
+  .footer11 h2{
+    font-family: var(--montserrat);
+    color: var(--light);
+    font-size: 20px;
+  }
+  .footer1, .footer3{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: start;
+    justify-content: space-between;
+    width: 60%;
+    padding: 0 10%;
+    padding-bottom: 40px;
+    height: max-content;
+  }
+  .footer11{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0 20px;
+    width: 33.333%;
+  }
+  .footer11:last-child{
+    gap: 20px;
+  }
+  .footer1 p{
+    color: var(--light);
+    opacity: 0.8;
+    font-size: 15px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+   }
+   .footer1 label{
+    color: var(--light);
+    opacity: 0.8;
+    font-size: 15px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-family: var(--montserrat);
+   }
+   .footer1 p svg{
+    fill: rgba(240, 238, 247,0.8);
+   }
+   .footer1 p:hover{
+    color: rgba(240, 238, 247,0.5);
+    fill: rgba(240, 238, 247,0.5);
+   }
+   .footer1 ul li:hover{
+    color: var(--secondary);
+    cursor: pointer;
+   }
+   .footer11:nth-child(2) h2{
+    margin-bottom: 25px;
+   }
+   .footer11:nth-child(2){
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid var(--gray);  
+   }
+   .menuList{
+    display: flex;
+    flex-direction: column;
+    padding: -20px;
+    height: 30px;
+    justify-content:left;
+    transition: 1s height ease-in-out;
+   }
+  .footer11 ul li{
+    color: var(--light);
+    opacity: 0.6;
+    font-size: 13px;
+    font-family: var(--montserrat);
+    position: relative;
+    bottom: 15px;
+  }
+  .footer1 ul{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    
+  }
+  .footer1 .adr{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: center;
+    
+  }
+  .footer1 .adr svg{
+    width: 20px;
+    height: 20px;
+    fill: var(--secondary)
+  }
+  .footer1 .adr span{
+  color: rgba(240, 238, 247,0.8);
+  font-family: var(--montserrat);
+  font-size: 15px;
+  }
+  .footer11 form input{
+    height: 45px;
+    width: 80%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 0 16px;
+    background-color: var(--light);
+    border: none;
+  }
+  .footer11 form button{
+    background: var(--light);
+    height: 45px;
+    width: 20%;
+    border-radius: 0px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: none;
+  }
+  .footer11 form button::before{
+    background: none;
+  }
+  .footer11 form{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 30px;
+    width: 100%;
+  }
+  #form{
+    width: 100%;
+  }
+  .footer11 form:hover{
+    border-radius: 8px;
+    box-shadow: 0 0 5px var(--light);
+  }
+  .footer11 form input:hover{
+    box-shadow: 0 var(--light);
+  }
+  .footer3{
+    width: 80%;
+  }
+  
+  .footer3 .payement{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .footer3 .footer11{
+    width: auto;
+    gap: 20px;
+  }
+  .footer3 .payement svg, .footer3 .payement img{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(240, 238, 247,0.2);
+    padding: 8px 16px;
+    border-radius: 4px;
+    fill: #F0EEF7;
+  }
+  .footer3 .partener svg{
+    height: 20px;
+    width: 16px;
+    fill: #9613AD;
+  }
+  .footer3 .footer31{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: end;
+    justify-content: center;
+    padding: 30px 0 50px 0;
+    border-bottom: 1px solid var(--gray);
+    border-top: 1px solid var(--gray);
+  }
+  .footer3 .footer31 .cardText{
+    width: 50px;
+    height: 50px;
+  }
+  
+  
+  
+  .footer2{
+    background: rgb(3, 10, 124, 0.1);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 40px;
+    padding: 10px 10%;
+  }
+  .footer2 span{
+    color: var(--light);
+    font-size: 14px;
+    font-family: var(--montserrat);
+  }
+  .linkRx{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+    color: var(--light);
+  }
+  .footer2 svg{
+    fill: var(--light);
+    width: 24px;
+    height: 24px;
+  }
+
+  /* fin footer */
   
