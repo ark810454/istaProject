@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Freehand&display=swap');
+
+:root{
+  --primary : #030a7c;
+  --secondary : #908c2d;
+  --grandient : linear-gradient(45deg, #585db0, #030a7c, #060933);
+  --danger : #A0004F;
+  --dangerVariant : #EC66A8;
+  --dark : #1e1e1e;
+  --black : #01010a;
+  --light : #f5f5fb;
+  --white : #fefefe;
+  --gray : #616060;
+  --borderColor : rgba(43, 43, 43, 0.08);
+  --whiteVariant : ##FAF9FA;
+  --inter:'Inter', sans-serif;
+  --montserrat : "Montserrat", sans-serif;
+  --freehand : "Edu NSW ACT Foundation", cursive;
+  --bebas_neue : 'Bebas Neue', sans-serif;
+}
+body{padding: 0px;margin: 0px;
+    overflow-x: hidden;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: var(--white);}
+    .container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        gap: 50px;
+        background-color: var(--white);
+      }
+a{
+  color: var(--primary);
+  text-decoration: none;
+}
+ul li{
+  list-style: none;
+}
+h1{
+  font-size: 40px;
+  font-family: var(--bebas_neue);
+  color: var(--black);
+  font-weight: 500;
+}
+
+/* menu navbar */
+
+.navbar{width: 90%;
+    height: 64px;background-color:var(--white);
+    position: fixed;top: 0px;display: flex;
+    align-items: center; justify-content: space-between; 
+    padding: 0 5%;
+    z-index: 10;
+  }
+  .logo{display: flex;align-items: center;justify-content: center;width: 120px;height:100%;}
+  .logo div{display: flex; align-items: center; justify-content: center;}
+  .logo a{font-family:var(--inter);font-weight: bold;font-size: 1em;
+    color: var(--primaryVariant);}
+  .logo img{width: 30px;padding-right: 4px;}
+  .caret{width: 16px;}
+  .links ul{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    font-family: var(--inter);
+    font-size: 14px;
+    z-index: 500;
+  }
+  .links ul li a{
+    color: var(--dark);
+    fill: var(--gray);
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: var(--inter);
+    font-weight: 300;
+  }
+  .links ul li{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+  }
+  .links ul li:hover{
+    color: var(--primary);
+    fill: var(--primary);
+    cursor: pointer;
+  }
+  .links ul li a:hover{
+    color: var(--primary);
+    fill: var(--primary);
+    height: 64px;
+  
+  }
+  .links ul li a svg{
+    width: 20px;
+    height: 20px;
+  
+  }
+  
+  #items1, #items3, #items2{
+    display: none;
+  }
+  #items{
+    right: 20px;
+    display: none;
+  }
+  
+  .tooltipAcount{
+    width: max-content;
+    height: auto;
+    padding: 30px 10px;
+    background-color: var(--white);
+    border: 1px solid var(--borderColor);
+    border-radius: 16px;
+    display: flex;
+    transition: 5s display ease-in-out;
+    flex-direction: column;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 64px;
+    min-width: 150px;
+    z-index: 20;
+    box-shadow: 2px 2px var(--light);
+    cursor: default;
+  
+  }
+  
+  
+  .tooltipAcount .item span{
+    overflow: hidden;
+    display: -webkit-box;
+      -webkit-line-clamp: 1; /* Limite le texte à 3 lignes */
+      -webkit-box-orient: vertical;
+      display: flex;
+      flex-wrap: nowrap;
+      color: var(--dark);
+      font-size: 14px;
+  }
+  .tooltipAcount .item{
+    cursor: pointer;
+  }
+  .tooltipAcount .item:hover{
+    background:  linear-gradient(to right bottom, var(--primary) 40%, var(--secondary), var(--tertiary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    fill: var(--primary);
+    cursor: pointer;
+  }
+  .tooltipAcount .item:first-child span{
+    opacity: 1;
+    font-weight: 500;
+  }
+  .tooltipAcount .item:last-child{
+    border-bottom: none;
+  }
+  .tooltipAcount .item{
+    width: 80%;
+    border: none;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--borderColor);
+    color: var(--dark);
+    font-family: var(--montserrat);
+    display: flex;
+    flex-wrap: nowrap;
+    opacity: 0.8;
+    gap: 15px;
+    background: none;
+    align-items: center;
+  }
+
+
+  .tooltipAcount .item svg{
+    fill: var(--dark);
+    width: 16px;
+    height: 16px;
+  }
+   button{
+    height: 40px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    font-family: var(--montserrat);
+    cursor: pointer;
+    text-align: center;
+    background: var(--grandient);
+    background-size: 300%;
+    z-index: 1;
+  }
+  
+  button span, .caret_btn{
+    color: var(--light);
+    fill: var(--light);
+    font-weight: 600;
+  }
+  button svg{
+   transform : scale(1.3);
+  }
+  /* fin navbar */
+  
