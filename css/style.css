@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Freehand&display=swap');
+
+:root{
+  --primary : #030a7c;
+  --secondary : #908c2d;
+  --grandient : linear-gradient(45deg, #585db0, #030a7c, #060933);
+  --danger : #A0004F;
+  --dangerVariant : #EC66A8;
+  --dark : #1e1e1e;
+  --black : #01010a;
+  --light : #f5f5fb;
+  --white : #fefefe;
+  --gray : #616060;
+  --borderColor : rgba(43, 43, 43, 0.08);
+  --whiteVariant : ##FAF9FA;
+  --inter:'Inter', sans-serif;
+  --montserrat : "Montserrat", sans-serif;
+  --freehand : "Edu NSW ACT Foundation", cursive;
+  --bebas_neue : 'Bebas Neue', sans-serif;
+}
+body{padding: 0px;margin: 0px;
+    overflow-x: hidden;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: var(--white);}
+    .container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        gap: 50px;
+        background-color: var(--white);
+      }
+a{
+  color: var(--primary);
+  text-decoration: none;
+}
+ul li{
+  list-style: none;
+}
+h1{
+  font-size: 40px;
+  font-family: var(--bebas_neue);
+  color: var(--black);
+  font-weight: 500;
+}
+
+/* menu navbar */
+
+.navbar{width: 90%;
+    height: 64px;background-color:var(--white);
+    position: fixed;top: 0px;display: flex;
+    align-items: center; justify-content: space-between; 
+    padding: 0 5%;
+    z-index: 10;
+  }
+  .logo{display: flex;align-items: center;justify-content: center;width: 120px;height:100%;}
+  .logo div{display: flex; align-items: center; justify-content: center;}
+  .logo a{font-family:var(--inter);font-weight: bold;font-size: 1em;
+    color: var(--primaryVariant);}
+  .logo img{width: 30px;padding-right: 4px;}
+  .caret{width: 16px;}
+  .links ul{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    font-family: var(--inter);
+    font-size: 14px;
+    z-index: 500;
+  }
+  .links ul li a{
+    color: var(--dark);
+    fill: var(--gray);
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center!important;
+    justify-content: center;
+    gap: 5px;
+    font-family: var(--inter);
+    font-weight: 300;
+
+  }
+  .links ul li a span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  .links ul li{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+  }
+  .links ul li:hover{
+    color: var(--primary);
+    fill: var(--primary);
+    cursor: pointer;
+  }
+  .links ul li a:hover{
+    color: var(--primary);
+    fill: var(--primary);
+    height: 64px;
+  
+  }
+  .links ul li a svg{
+    width: 14px;
+    height: 14px;
+    margin-top:1px;
+  }
+  
+  #items1, #items3, #items2{
+    display: none;
+  }
+  #items{
+    right: 20px;
+    display: none;
+  }
+  
+  .tooltipAcount{
+    width: max-content;
+    height: auto;
+    padding: 30px 10px;
+    background-color: var(--white);
+    border: 1px solid var(--borderColor);
+    border-radius: 16px;
+    display: flex;
+    transition: 5s display ease-in-out;
+    flex-direction: column;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 64px;
+    min-width: 150px;
+    z-index: 20;
+    box-shadow: 2px 2px var(--light);
+    cursor: default;
+  
+  }
+  
+  
+  .tooltipAcount .item span{
+    overflow: hidden;
+    display: -webkit-box;
+      -webkit-line-clamp: 1; /* Limite le texte à 3 lignes */
+      -webkit-box-orient: vertical;
+      display: flex;
+      flex-wrap: nowrap;
+      color: var(--dark);
+      font-size: 14px;
+  }
+  .tooltipAcount .item{
+    cursor: pointer;
+  }
+  .tooltipAcount .item:hover{
+    background:  linear-gradient(to right bottom, var(--primary) 40%, var(--secondary), var(--tertiary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    fill: var(--primary);
+    cursor: pointer;
+  }
+  .tooltipAcount .item:first-child span{
+    opacity: 1;
+    font-weight: 500;
+  }
+  .tooltipAcount .item:last-child{
+    border-bottom: none;
+  }
+  .tooltipAcount .item{
+    width: 80%;
+    border: none;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--borderColor);
+    color: var(--dark);
+    font-family: var(--montserrat);
+    display: flex;
+    flex-wrap: nowrap;
+    opacity: 0.8;
+    gap: 15px;
+    background: none;
+    align-items: center;
+  }
+
+
+  .tooltipAcount .item svg{
+    fill: var(--dark);
+    width: 16px;
+    height: 16px;
+  }
+   button{
+    height: 40px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    font-family: var(--montserrat);
+    cursor: pointer;
+    text-align: center;
+    background: var(--grandient);
+    background-size: 300%;
+    z-index: 1;
+  }
+  
+  button span, .caret_btn{
+    color: var(--light);
+    fill: var(--light);
+    font-weight: 600;
+  }
+  button svg{
+   transform : scale(1.3);
+  }
+  /* fin navbar */
+
+
+
+  /* debut footer */
+.footer{
+    width: 100%;
+    margin-top: 100px;
+    position: relative;
+    bottom: 0;
+    height: max-content;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+  }
+  .footertitle{
+    background:  linear-gradient(to right bottom, var(--primary) 40%, var(--secondary), var(--tertiary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    left: 10%;
+    font-size: 20px;
+    font-family: var(--inter);
+    font-weight: 600;
+    padding: 20px 0 0 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: left;
+    
+  }
+
+  .footer11 h2{
+    font-family: var(--montserrat);
+    color: var(--light);
+    font-size: 20px;
+  }
+  .footer1, .footer3{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: start;
+    justify-content: space-between;
+    width: 60%;
+    padding: 0 10%;
+    padding-bottom: 40px;
+    height: max-content;
+  }
+  .footer11{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0 20px;
+    width: 33.333%;
+  }
+  .footer11:last-child{
+    gap: 20px;
+  }
+  .footer1 p{
+    color: var(--light);
+    opacity: 0.8;
+    font-size: 15px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+   }
+   .footer1 label{
+    color: var(--light);
+    opacity: 0.8;
+    font-size: 15px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-family: var(--montserrat);
+   }
+   .footer1 p svg{
+    fill: rgba(240, 238, 247,0.8);
+   }
+   .footer1 p:hover{
+    color: rgba(240, 238, 247,0.5);
+    fill: rgba(240, 238, 247,0.5);
+   }
+   .footer1 ul li:hover{
+    color: var(--secondary);
+    cursor: pointer;
+   }
+   .footer11:nth-child(2) h2{
+    margin-bottom: 25px;
+   }
+   .footer11:nth-child(2){
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid var(--gray);  
+   }
+   .menuList{
+    display: flex;
+    flex-direction: column;
+    padding: -20px;
+    height: 30px;
+    justify-content:left;
+    transition: 1s height ease-in-out;
+   }
+  .footer11 ul li{
+    color: var(--light);
+    opacity: 0.6;
+    font-size: 13px;
+    font-family: var(--montserrat);
+    position: relative;
+    bottom: 15px;
+  }
+  .footer1 ul{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    
+  }
+  .footer1 .adr{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: center;
+    
+  }
+  .footer1 .adr svg{
+    width: 20px;
+    height: 20px;
+    fill: var(--secondary)
+  }
+  .footer1 .adr span{
+  color: rgba(240, 238, 247,0.8);
+  font-family: var(--montserrat);
+  font-size: 15px;
+  }
+  .footer11 form input{
+    height: 45px;
+    width: 80%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 0 16px;
+    background-color: var(--light);
+    border: none;
+  }
+  .footer11 form button{
+    background: var(--light);
+    height: 45px;
+    width: 20%;
+    border-radius: 0px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: none;
+  }
+  .footer11 form button::before{
+    background: none;
+  }
+  .footer11 form{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 30px;
+    width: 100%;
+  }
+  #form{
+    width: 100%;
+  }
+  .footer11 form:hover{
+    border-radius: 8px;
+    box-shadow: 0 0 5px var(--light);
+  }
+  .footer11 form input:hover{
+    box-shadow: 0 var(--light);
+  }
+  .footer3{
+    width: 80%;
+  }
+  
+  .footer3 .payement{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .footer3 .footer11{
+    width: auto;
+    gap: 20px;
+  }
+  .footer3 .payement svg, .footer3 .payement img{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(240, 238, 247,0.2);
+    padding: 8px 16px;
+    border-radius: 4px;
+    fill: #F0EEF7;
+  }
+  .footer3 .partener svg{
+    height: 20px;
+    width: 16px;
+    fill: #9613AD;
+  }
+  .footer3 .footer31{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: end;
+    justify-content: center;
+    padding: 30px 0 50px 0;
+    border-bottom: 1px solid var(--gray);
+    border-top: 1px solid var(--gray);
+  }
+  .footer3 .footer31 .cardText{
+    width: 50px;
+    height: 50px;
+  }
+  
+  
+  
+  .footer2{
+    background: rgb(3, 10, 124, 0.1);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 40px;
+    padding: 10px 10%;
+  }
+  .footer2 span{
+    color: var(--light);
+    font-size: 14px;
+    font-family: var(--montserrat);
+  }
+  .linkRx{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+    color: var(--light);
+  }
+  .footer2 svg{
+    fill: var(--light);
+    width: 24px;
+    height: 24px;
+  }
+
+  /* fin footer */
+  
