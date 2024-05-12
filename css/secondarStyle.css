@@ -188,6 +188,17 @@ header{
         background-color: white;
         flex-direction: column;
         cursor: pointer;
+        position: relative;
+    }
+    .rightR .swiper-slide::before{
+        content: "Revue title";
+        display: block;
+        background-color: var(--secondary);
+        color: var(--white);
+        position: absolute;
+        top: -5px;
+        padding: 5px 20px;
+        border-radius: 10px;
     }
     .rightR .swiper-slide h3{
         font-size: 40px;
