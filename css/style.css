@@ -3,11 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Freehand&display=swap');
-
+@import './secondarStyle.css';
 :root{
   --primary : #030a7c;
   --secondary : #908c2d;
-  --grandient : linear-gradient(45deg, #585db0, #030a7c, #060933);
+  --grandient : linear-gradient(45deg, #585db0 0%, #030a7c 51%,#060933 100%);
   --danger : #A0004F;
   --dangerVariant : #EC66A8;
   --dark : #1e1e1e;
@@ -52,10 +52,19 @@ h1{
   font-weight: 500;
 }
 
+/* header{
+  background-color: rgba(3, 9, 124, 0.1);
+ 
+  height: 600px;
+  width: 100%;
+  display: block;
+} */
+
 /* menu navbar */
 
 .navbar{width: 90%;
-    height: 64px;background-color:var(--white);
+    height: 64px;
+    background-color:transparent;
     position: fixed;top: 0px;display: flex;
     align-items: center; justify-content: space-between; 
     padding: 0 5%;
@@ -76,7 +85,7 @@ h1{
     z-index: 500;
   }
   .links ul li a{
-    color: var(--dark);
+    color: var(--black);
     fill: var(--gray);
     cursor: pointer;
     display: flex;
@@ -85,7 +94,7 @@ h1{
     justify-content: center;
     gap: 5px;
     font-family: var(--inter);
-    font-weight: 300;
+    font-weight: 400;
 
   }
   .links ul li a span{
