@@ -38,7 +38,7 @@ header{
     overflow: initial!important;
     text-align: justify;
     background-color: transparent!important;
-    /* padding: 10px!important; */
+    
 }
 .heroText{
     width: 80%;
@@ -64,6 +64,21 @@ header{
 .containerLg{
     width: 85%;
     margin: 0 auto;
+}
+.ctrlPane .swiper-button-next{
+    display: none!important;
+}
+.ctrlPane .swiper-button-prev{
+    left: 95% !important;
+    top: 90% !important;
+    transform: rotate(180deg);
+}
+.ctrlPane .swiper-button-prev::after{
+    font-size: 18px!important;
+    background: var(--primary)!important;
+    color: var(--white) !important;
+    padding:5px 10px;
+    border-radius: 10px;
 }
 @keyframes anime {
     from{
@@ -440,6 +455,11 @@ header{
     .slideHero img{
         width: 80%!important;
         /* margin: 0 auto!important;  */
+    }
+    .ctrlPane .swiper-button-prev{
+        left: 80% !important;
+        top: 95% !important;
+        transform: rotate(180deg);
     }
     /* fin hero section */
     /* debut about */
