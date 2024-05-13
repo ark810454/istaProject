@@ -1,6 +1,10 @@
 .slideHero img{
     display: block;
     box-shadow: 30px -30px 1px #F5F5FB;
+    width: 400px!important;
+}
+.slideHero{
+    padding: 20px;
 }
 h1{
     font-size: 42px;
@@ -26,6 +30,16 @@ header{
     font-weight: 500;
     color: #B89130;
 }
+.heroText .swiper-slide{
+    width: 100%!important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: initial!important;
+    text-align: justify;
+    background-color: transparent!important;
+    /* padding: 10px!important; */
+}
 .heroText{
     width: 80%;
     margin: 0 auto;
@@ -33,8 +47,13 @@ header{
     margin-top: 10%;
     justify-content: space-between;
 }
-.heroText .left{
+.heroText .swiper-slide .left{
     width: 384px;
+    animation: animeX 1s ease-out forwards;
+    margin-left: 10px;
+}
+.heroText .swiper-slidet .right{
+    animation: anime 1s ease-out forwards;
 }
 .btnPlus{
     color:var(--white);
@@ -46,6 +65,27 @@ header{
     width: 85%;
     margin: 0 auto;
 }
+@keyframes anime {
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes animeX {
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* starting stilling about section */
 #about{
     padding: 50px;
     display: flex;
@@ -147,8 +187,8 @@ header{
   }
   .swiper-button-next,.swiper-button-prev{
     color: var(--primary)!important;
-    /* height: 10px !important; */
   }
+  
   .controlePave{
     padding: 30px;
     display: flex;
@@ -189,7 +229,7 @@ header{
         flex-direction: column;
         cursor: pointer;
         position: relative;
-    }
+        }
     .rightR .swiper-slide::before{
         content: "Revue title";
         display: block;
@@ -235,19 +275,31 @@ header{
         justify-content: space-between;
     }
 
+@keyframes animeFall {
+    from{
+        opacity: 1;
+    }to{
+        opacity: 0;
+    }
+}
+
 
 
 /* medium screen */
 @media screen and ( max-width:1024px ) {
+    .slideHero{
+        padding: 0px;
+    }
     .container{
         display: none!important;
     }
-    .heroText{
+    .heroText .swiper-slide{
        gap: 50px!important;
        margin: auto;
     }
-    .heroText .left{
+    .heroText .swiper-slide .left{
         width: 500px!important;
+        margin: 0!important;
     }
     .slideHero img{
         width: 100%;
@@ -307,10 +359,13 @@ header{
     #about{
         padding: 0;
     }
-    .heroText{
+    .heroText .swiper-slide{
         gap: 50px!important;
         flex-direction: column!important;
         margin: auto;
+     }
+     .heroText .swiper-slide .left{
+        width: 400px !important;
      }
      .titleText{
         width: 80%;
@@ -330,6 +385,14 @@ header{
     .rightR .swiper {
         width: 400px !important;
     }
+    .swiper-button-next::after,.swiper-button-prev::after{
+        width: 20px!important;
+        height: 20px !important;
+        font-size: 20px!important;
+      }
+      .controlePave{
+        gap: 20px;
+      }
 }
 /* end */
 
@@ -351,7 +414,7 @@ header{
     h1{
         font-size: 24px!important;
     }
-    .heroText .left{
+    .heroText .swiper-slide .left{
         width: 100%!important;
         margin: 0 auto;
     }
@@ -362,8 +425,8 @@ header{
         display: inline-block!important;
         text-align: justify;
     }
-    .heroText{
-        width: 90%;
+    .heroText .swiper-slide{
+        width: 90%!important;
         margin: auto;
         flex-direction: column!important;
         gap: 50px;
@@ -375,7 +438,7 @@ header{
         padding: 0!important;
     }
     .slideHero img{
-        width: 80%;
+        width: 80%!important;
         /* margin: 0 auto!important;  */
     }
     /* fin hero section */
