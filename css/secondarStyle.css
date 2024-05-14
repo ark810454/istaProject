@@ -305,9 +305,6 @@ header{
     .slideHero{
         padding: 0px;
     }
-    .container{
-        display: none!important;
-    }
     .heroText .swiper-slide{
        gap: 50px!important;
        margin: auto;
@@ -340,11 +337,6 @@ header{
 
 
 @media screen and ( max-width:800px ) {
-    /* HAVE TO REMOVE */
-    footer{
-        display: none!important;
-    }
-    /*  */
     #about{
         padding: 0;
     }
@@ -404,12 +396,6 @@ header{
     header{
         background-position: 100%;
     }
-    /* HAVE TO REMOVE */
-    header .container{
-        display: none;
-    }
-    /*  */
-    
     h1{
         font-size: 24px!important;
     }
