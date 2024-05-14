@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Freehand&display=swap');
+@import './secondarStyle.css';
 
 :root{
   --primary : #030a7c;
@@ -68,7 +69,8 @@ h1{
 /* menu navbar */
 
 .navbar{width: 90%;
-    height: 64px;background-color:var(--white);
+    height: 64px;
+   /*  background-color:var(--white); */
     position: fixed;top: 0px;display: flex;
     align-items: center; justify-content: space-between; 
     padding: 0 5%;
@@ -89,7 +91,8 @@ h1{
     z-index: 500;
   }
   .links ul li a{
-    color: var(--dark);
+    color: var(--black);
+    
     fill: var(--gray);
     cursor: pointer;
     display: flex;
@@ -98,7 +101,7 @@ h1{
     justify-content: center;
     gap: 5px;
     font-family: var(--inter);
-    font-weight: 300;
+    font-weight: 400;
 
   }
   .links ul li a span{
@@ -649,6 +652,78 @@ h1{
 }
   /* Fin section DG */
 
+    
+  .rightA .swiper {
+    width: 500px;
+    height: 100%;
+  }
+
+  .rightA .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent!important;
+  }
+
+  .rightA .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .rightR .swiper {
+    width:500px;
+    height: 100%;
+  }
+
+  .rightR .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+  }
+
+  .rightR .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px !important;
+
+  }
+  .rightR .swiper-pagination-bullet-active{
+    background:var(--secondary) ;
+    width: 16px;
+    height: 16px;
+  }
+  .rightR .swiper-pagination-bullet{
+    background:var(--secondary);
+    opacity: 1;
+    width: 16px;
+    height: 16px;
+  }
+  .rightR .swiper-pagination{
+    margin-left: -180px;
+
+  }
+  /* .swiper-pagination{
+    top: 100%!important;
+  } */
+  .heroText .swiper {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding-bottom: 20px!important;
+    
+  }
+
   /* section rx */
   #rx{
     width: 100%;
@@ -1017,16 +1092,15 @@ h1{
   @media screen and (max-width : 991px) {
     .links{
       background-color: #01010a;
-      display: flex;
+      display: none;
       flex-direction: column;
-      
       position: fixed;
       top: 0;
       left: 0;
       width: 300px;
       height: 100vh;
       gap: 0px;
-      overflow: none;
+      overflow: hidden;
     }
     .links .logo{
       height: 80px;
