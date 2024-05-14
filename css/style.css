@@ -809,6 +809,28 @@ h1{
     background-color: var(--white);
     border: 1px solid #00000022;
   }
+  ::-webkit-scrollbar{
+    background: none;
+    width: 5px;
+    height: 5px;
+    
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color: #060933;
+    border-radius: 1px;
+    
+  }
+  .elementor-column ::-webkit-scrollbar{
+    background: none;
+    width: 5px;
+    height: 5px;
+    
+  }
+  .elementor-column ::-webkit-scrollbar-thumb{
+    background-color: #060933;
+    border-radius: 1px;
+    
+  }
   .elementor-column h3 span{
     background-color: var(--white);
     display: flex;
