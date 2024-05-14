@@ -1,3 +1,18 @@
+
+:root{
+    --primary : #030a7c;
+    --secondary : #908c2d;
+    --grandient : linear-gradient(45deg, #585db0, #030a7c, #060933 );
+    --danger : #A0004F;
+    --dangerVariant : #EC66A8;
+    --dark : #1e1e1e;
+    --black : #01010a;
+    --light : #f5f5fb;
+    --white : #fefefe;
+    --gray : #616060;
+    --borderColor : rgba(43, 43, 43, 0.08);
+    --whiteVariant : #FAF9FA;
+}
 .slideHero img{
     display: block;
     box-shadow: 30px -30px 1px #F5F5FB;
@@ -61,9 +76,8 @@ header{
     animation: animeX 1s ease-out forwards;
     margin-left: 10px;
 }
-.heroText .swiper-slidet .right{
+.heroText .swiper-slide .right{
     animation: anime 1s ease-out forwards;
-    width: 40%;
 }
 .btnPlus{
     color:var(--white);
@@ -134,9 +148,10 @@ header{
 .boxPlace{
     display:flex;
     gap:1px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 10px 5px;
+    border: 1px solid rgba(43, 43, 43, 0.05);
 }
 .boxText{
     font-size: 14px;
@@ -146,6 +161,7 @@ header{
     font-size: 21px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: var(--dark);
 }
 /* about right place */
 .sliderContainer{
@@ -192,7 +208,7 @@ header{
     height: 100%;
     object-fit: cover;
   }
- .rightA .swiper-button-next, .swiper-button-prev{
+ .rightA .swiper-button-next,.rightA .swiper-button-prev{
     position: none !important;
     /* width: 5px!important;
     height: 5px !important; */
@@ -354,7 +370,7 @@ header{
         padding: 0;
     }
     .heroText{
-        width: 90!important;
+        width: 90%!important;
         margin-top:3% !important;
     }
     .heroText .swiper-slide{
@@ -364,10 +380,10 @@ header{
         margin: auto;
      }
      .heroText .swiper-slide .left{
-        width: 400px !important;
+        width: 90% !important;
      }
      .titleText{
-        width: 80%;
+        width: 100%;
         display: inline-block;
      }
      .containerLg{
@@ -389,7 +405,7 @@ header{
     .rightR .swiper {
         width: 400px !important;
     }
-    .swiper-button-next::after,.swiper-button-prev::after{
+    .rightA .swiper-button-next::after, .rightA.swiper-button-prev::after{
         width: 20px!important;
         height: 20px !important;
         font-size: 20px!important;
@@ -408,25 +424,29 @@ header{
 @media screen and ( max-width:490px ) {
     header{
         background-position: 100%;
+        width: 100%;
     }
     h1{
-        font-size: 24px!important;
+        font-size: 40px!important;
     }
     .heroText .swiper-slide .left{
         width: 100%!important;
         margin: 0 auto;
     }
     .titleText{
-        width: 80%!important;
+        width: 90%!important;
         overflow: hidden!important;
         text-wrap:wrap!important ;
         display: inline-block!important;
         text-align: justify;
     }
     .heroText .swiper-slide{
-        width: 90%!important;
+        width: 100%!important;
         margin: auto;
         flex-direction: column!important;
+        align-items: center;
+        justify-content: center;
+        background: red!important;
         gap: 50px;
         
     }

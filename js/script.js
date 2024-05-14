@@ -1,4 +1,44 @@
 
+/* animer une section au moment du scroll */
+var stop=false;
+function isScrolledIntoView(el) {
+    var rect = el.getBoundingClientRect();
+    return (rect.top <= 0 && rect.bottom >= 0) || (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight)
+     && rect.top <= (window.innerHeight || document.documentElement.clientHeight)) || (rect.top >= 0 
+      && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight));
+  }
+  var nav = document.querySelector(".navbar");
+  var navScroll = document.querySelector(".navScroll");
+  nav.classList.add("navBg2");
+  document.addEventListener("scroll", function () {
+  
+        if (isScrolledIntoView(navScroll)) {
+          nav.classList.add("navBg");
+          nav.classList.remove("navBg2");
+        }else{
+          nav.classList.remove("navBg");
+          nav.classList.add("navBg2");
+        }
+    
+    })
+
+let btnOpenenu = document.querySelectorAll(".btnOpenenu")
+let menu = document.querySelector(".links")
+btnOpenenu[1].style.display="none";
+btnOpenenu[0].addEventListener('click', ()=>{
+  btnOpenenu[0].style.display="none";
+  btnOpenenu[1].style.display="flex";
+  menu.classList.remove("closeMenu");
+  menu.classList.add("openMenu");
+})
+btnOpenenu[1].addEventListener('click', ()=>{
+  btnOpenenu[1].style.display="none";
+  btnOpenenu[0].style.display="flex";
+  menu.classList.remove("openMenu");
+  menu.classList.add("closeMenu");
+})
+
+
 let viewToolTip = document.querySelectorAll("#viewToolTip")
 let tooltipAcount = document.getElementById("items")
 let caret= document.querySelectorAll("#caretbtn");

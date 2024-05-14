@@ -17,7 +17,7 @@
   --white : #fefefe;
   --gray : #616060;
   --borderColor : rgba(43, 43, 43, 0.08);
-  --whiteVariant : ##FAF9FA;
+  --whiteVariant : #FAF9FA;
   --inter:'Inter', sans-serif;
   --montserrat : "Montserrat", sans-serif;
   --freehand : "Edu NSW ACT Foundation", cursive;
@@ -38,6 +38,14 @@ body{padding: 0px;margin: 0px;
         align-items: center;
         gap: 50px;
         background-color: var(--white);
+      }
+      .navScroll{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        gap: 50px;
       }
 a{
   color: var(--primary);
@@ -76,6 +84,35 @@ h1{
     padding: 0 5%;
     z-index: 10;
   }
+  .navBg{
+    background-color: var(--light)!important;
+    animation: animes 1s ease-out forwards;
+  }
+  .navBg2{
+    animation: anime2 1s ease-out forwards;
+  }
+  @keyframes animes {
+    from{
+        opacity: 0;
+        transform: translateY(-64px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes anime2 {
+  from{
+    opacity: 0;
+      background: var(--light);
+      transform: translateY(-64px);
+  }
+  to{
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
   .logo{display: flex;align-items: center;justify-content: center;width: 120px;height:100%;}
   .logo div{display: flex; align-items: center; justify-content: center;}
   .logo a{font-family:var(--inter);font-weight: bold;font-size: 1em;
@@ -152,7 +189,7 @@ h1{
     width: max-content;
     height: auto;
     padding: 30px 10px;
-    background-color: var(--white);
+    background-color: var(--light);
     border: 1px solid var(--borderColor);
     border-radius: 16px;
     display: flex;
@@ -650,6 +687,9 @@ h1{
   padding: 0.4rem 0.55rem;
   border-radius: 50%;
 }
+#DG .swiper-slide{
+  background: none;
+}
   /* Fin section DG */
 
     
@@ -1092,28 +1132,64 @@ h1{
   @media screen and (max-width : 991px) {
     .links{
       background-color: #01010a;
-      display: none;
+      display: flex;
       flex-direction: column;
       position: fixed;
-      top: 0;
       left: 0;
+      top: 0;
       width: 300px;
       height: 100vh;
+      justify-content: space-between!important;
       gap: 0px;
       overflow: hidden;
+      transform: translateX(-100%);
     }
+    .openMenu{
+      animation: 0.4s openMenu ease-in-out forwards;
+    }
+    @keyframes openMenu {
+      from{
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to{
+        opacity: 1;
+        transform: translateX(0%);
+      }
+     }
+     .closeMenu{
+      animation: 0.4s closeMenu ease-in-out forwards;
+    }
+    @keyframes closeMenu {
+      from{
+        opacity: 1;
+        transform: translateX(0%);
+      }
+      to{
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+     }
     .links .logo{
       height: 80px;
       width: 80%;
       border-bottom: 1px solid #ffffff88;
-      margin: auto;
+      margin: 0;
       top: 0;
       margin-top: 0;
-      justify-content: left;
+      position: relative;
+      font-size: 14px;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column-reverse;
+      gap: 16px;
+      padding: 16px 0;
+
     }
     .links  .logo a{
       color: var(--light);
     }
+
     .links ul{
         display: flex;
       flex-direction: column;
@@ -1152,12 +1228,27 @@ h1{
       display: flex;
       width: 100%;
       justify-content: left;
-      margin-top: 50px;
     }
     #dismiss button{
       margin-left: 20px;
       color: var(--secondary);
     }
+    .btnOpenenu{
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      width: auto!important;
+      fill: #060933;
+      color: #060933;
+      font-family: var(--inter);
+      margin-top: 0!important;
+      cursor: pointer;
+
+    }
+
+
  
   .links .item{
     width: 100%;
@@ -1207,5 +1298,15 @@ h1{
     }
     #link1 a:hover, #link3 a:hover{
       height: auto;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .links{
+      width: 250px;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .links{
+      width: 200px;
     }
   }
