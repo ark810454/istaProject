@@ -580,7 +580,7 @@ header{
     border-bottom-right-radius: 12px;
     background-color: var(--white);
     border: 1px solid #00000022;
-    width: 100%;
+    width: 80%;
   }
   .elementor-column h3 span{
     background-color: var(--white);
