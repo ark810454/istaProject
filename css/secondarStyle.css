@@ -338,34 +338,8 @@ header{
     }
 }
 
-@media screen and ( max-width:830px ) {
-    /* about place */
-    #about{
-        gap: 50px;
-        flex-direction: column!important;
-    }
-    .icon svg{
-        width: 70px;
-    }
-    .smallTitle, .left p{
-        text-align: justify;
-    }
-    .rightA .swiper{
-        width: 500px;
-    }
-    .rightA .swiper-slide img{
-        width: 100%;
-    }
-    /* revue place */
-    .revueContent{
-        gap: 40px!important;
-    }
-    .rightR .swiper {
-        width: 300px !important;
-    }
-}
 
-@media screen and ( max-width:600px ) {
+@media screen and ( max-width:800px ) {
     /* HAVE TO REMOVE */
     footer{
         display: none!important;
@@ -374,7 +348,12 @@ header{
     #about{
         padding: 0;
     }
+    .heroText{
+        width: 90!important;
+        margin-top:3% !important;
+    }
     .heroText .swiper-slide{
+        justify-content: flex-start!important;
         gap: 50px!important;
         flex-direction: column!important;
         margin: auto;
@@ -390,12 +369,17 @@ header{
         width: 90%;
         margin: 0 auto;
     }
+    /* about resizing */
+    #about{
+        flex-direction: column!important;
+        padding: 0;
+        gap: 50px;
+    }
+    /* revue resizing */
     .revueContent{
         flex-direction: column!important;
         gap: 50px;
         padding: 0;
-        align-items: flex-start!important;
-        margin-left:10% ;
     }
     .rightR .swiper {
         width: 400px !important;
@@ -463,11 +447,6 @@ header{
     }
     /* fin hero section */
     /* debut about */
-    #about{
-        flex-direction: column!important;
-        padding: 0;
-        gap: 50px;
-    }
     #about .left{
         width: 100%!important;
         padding: 0;

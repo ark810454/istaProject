@@ -382,7 +382,7 @@
       </div>
       <div class="rightA">
         <div class="sliderContainer">
-          <div class="swiper mySwiper">
+          <div class="swiper aboutSwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img src="./assets/879396719images - 2021-08-04T162500 1.png" alt="">
@@ -758,7 +758,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
      <script>
       // Slider commande lines
-      var swiper = new Swiper(".mySwiper", {
+
+      // about slider
+      var swiper = new Swiper(".aboutSwiper", {
         spaceBetween: 30,
         centeredSlides: true,
         
@@ -771,7 +773,7 @@
           prevEl: ".swiper-button-prev",
         },  
       });
-
+      // revue slider
     var swiper = new Swiper(".nextSwiper", {
       autoplay: {
           delay: 3500,
@@ -782,11 +784,15 @@
       dynamicBullets: true,
     },
   });
-
+  // header slider
   var swiper = new Swiper(".swiperHero", {
       slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
+      // autoplay:{
+      //   delay:3000,
+      //   disableOnInteraction:false,
+      // },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
