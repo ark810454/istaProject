@@ -446,7 +446,6 @@ header{
         flex-direction: column!important;
         align-items: center;
         justify-content: center;
-        background: red!important;
         gap: 50px;
         
     }
