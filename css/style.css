@@ -26,9 +26,10 @@
 body{padding: 0px;margin: 0px;
     overflow-x: hidden;
     position: relative;
-    left: 0;
+    /* left: 0;
     right: 0;
-    top: 0;
+    top: 0; */
+    width: 100dvw;
     background-color: var(--white);}
     .container{
         width: 100%;
@@ -36,6 +37,7 @@ body{padding: 0px;margin: 0px;
         flex-direction: column;
         position: relative;
         align-items: center;
+        overflow-x: hidden;
         gap: 50px;
         background-color: var(--white);
       }
