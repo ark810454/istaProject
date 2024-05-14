@@ -335,7 +335,7 @@ h1{
     backdrop-filter: blur(4px);
   }
   .nameSection{
-    width: 80%;
+    width: 90%;
     display: flex;
     align-items: end;
     justify-content: space-between;
@@ -354,6 +354,7 @@ h1{
     color: var(--light);
     font-weight: 400;
     position: relative;
+   width: 78px;
   }
   h5::before{
     content: '';
@@ -1130,6 +1131,11 @@ h1{
   }
 
   @media screen and (max-width : 991px) {
+    navbar{width: 94%;
+      align-items: center; justify-content: space-between; 
+      padding: 0 3%;
+      z-index: 10;
+    }
     .links{
       background-color: #01010a;
       display: flex;
@@ -1138,7 +1144,7 @@ h1{
       left: 0;
       top: 0;
       width: 300px;
-      height: 100vh;
+      height: 100dvh;
       justify-content: space-between!important;
       gap: 0px;
       overflow: hidden;
