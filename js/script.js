@@ -1,4 +1,3 @@
-
 /* animer une section au moment du scroll */
 var stop=false;
 function isScrolledIntoView(el) {
@@ -15,9 +14,11 @@ function isScrolledIntoView(el) {
         if (isScrolledIntoView(navScroll)) {
           nav.classList.add("navBg");
           nav.classList.remove("navBg2");
+          console.log("active")
         }else{
           nav.classList.remove("navBg");
           nav.classList.add("navBg2");
+          console.log("desactive")
         }
     
     })
@@ -92,7 +93,6 @@ link1[i].addEventListener('mouseover', function() {
     items1[i].style.display = 'flex';
     caretbottom[i].style.transform = "rotate(180deg)"
 caretbottom[i].style.transition = "0.2s transform ease-in-out" 
-console.log(i)
 });
 
 link1[i].addEventListener('mouseleave', function() {
@@ -130,3 +130,8 @@ for(let i=0; i<allBtnftMenu.length; i++){
     }
   })
 }
+
+
+
+
+

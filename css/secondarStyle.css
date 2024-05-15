@@ -34,8 +34,9 @@ header h1{
 header h1::before{
     background-color: #8a6b1c;
 }
+
 header{
-    background: linear-gradient(45deg,rgba(3, 9, 124, 0.4),rgba(3, 9, 124, 0.4)),url(../assets/Texture.png);
+    background: linear-gradient(45deg,rgba(3, 9, 124, 0.3),rgba(3, 9, 124, 0.2)),url(../assets/Texture.png);
     background-position: cover;
     background-repeat: no-repeat;
     background-size:100% 100%;
@@ -43,6 +44,7 @@ header{
     width: 100%;
     display: flex;
     flex-wrap: wrap;padding: 100px 0;
+    margin: 0!important;
     /* justify-content: space-between; */
 }
 .titleText{
@@ -243,7 +245,7 @@ header{
 
     /* revue style place */
     #revue{
-        background: linear-gradient(45deg,rgba(3, 9, 124, 0.4),rgba(3, 9, 124, 0.4)),url(../assets/Texture.png);
+        background: linear-gradient(45deg,rgba(3, 9, 124, 0.3),rgba(3, 9, 124, 0.3)),url(../assets/Texture.png);
         background-position: cover;
         background-repeat: no-repeat;
         background-size:100% 100%;
@@ -426,6 +428,7 @@ header{
     header{
         background-position: 100%;
         width: 100%;
+        padding: 50px 0;
     }
     h1{
         font-size: 40px!important;
@@ -555,7 +558,7 @@ header{
     overflow: hidden;
   }
   .elementor-column{
-    width: 80%!important;
+    width: 100%!important;
     overflow: scroll;
   }
  
@@ -593,7 +596,8 @@ header{
         /* margin: 0 auto; */
     }
     .rightA .swiper{
-        width: 250px!important;
+        max-width: 300px!important;
+        min-width: 260px!important;
         transform: translateX(0px); 
     }
 
