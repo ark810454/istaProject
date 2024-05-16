@@ -169,15 +169,58 @@ h1{
     height: 64px;
   
   }
+  .links .item a:hover{
+    height: auto!important;
+  }
+ 
+  .links .item a{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  .links .item a #tt{
+    position: absolute;
+    left: 32px;
+    font-family: var(--montserrat);
+  }
   .links ul li a svg{
     width: 14px;
     height: 14px;
    
   }
-  
-  #items1, #items3, #items2{
-    display: none;
+
+  .items1Show{
+    animation: 0.7s items1SHow ease-in-out forwards;
   }
+  .items1Hide{
+    animation: 0.4s items1Hide ease-in-out forwards;
+  }
+  @keyframes items1SHow {
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+        display: none;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+        display: flex;
+    }
+}
+@keyframes items1Hide {
+    from{
+      opacity: 0;
+      transform: translateY(0);
+      display: none;
+    }
+    to{
+      opacity: 0;
+      transform: translateY(-10px);
+      display: none;
+    }
+}
   #items{
     right: 20px;
     display: none;
@@ -205,13 +248,12 @@ h1{
     z-index: 20;
     box-shadow: 2px 2px var(--light);
     cursor: default;
-  
   }
   .tooltipAcount2{
-    background-color: var(--white)!important;
+    background-color: var(--light)!important;
     position: absolute;
-    top: 10px;
-    left: 275px;
+    top: 0px;
+    left: 255px;
     opacity: 1;
   }
   .mens svg{
@@ -236,6 +278,15 @@ h1{
   }
   .tooltipAcount .item{
     cursor: pointer;
+  }
+  .mens{
+    width: 220px!important;
+  }
+  .mens #link1:hover{
+    width: 180px!important;
+    background: none!important;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   .tooltipAcount .item span:hover{
     background:  linear-gradient(to right bottom, var(--primary) , #585db0);
@@ -298,6 +349,9 @@ h1{
   }
   button svg{
    transform : scale(1.3);
+   width: 16px;
+   height: 16px;
+   fill: var(--light);
   }
   /* fin navbar */
 
@@ -965,6 +1019,12 @@ h1{
    }
    #btnftmenu{
     font-family: var(--inter);
+    width: max-content;
+   }
+   #btnftmenu svg{
+    fill: var(--light);
+    width: 16px;
+    height: 16px;
    }
   .footer11 ul li{
     color: var(--light);
@@ -978,7 +1038,6 @@ h1{
     color: #ffffffaa;
   }
   .footer1 ul{
-    display: none;
     flex-direction: column;
     gap: 5px;
     
@@ -1302,13 +1361,25 @@ h1{
       justify-content: left;
       padding: 16px 8%;
     }
-    #link1:hover{
+    #link1{
       display: flex;
       flex-direction: column;
       align-items: start;
       justify-content: start;
     }
-   
+    .links #link1 a{
+      width: 100%;
+      justify-content: space-between;
+    }
+    .links #link1 img{
+      opacity: 0;
+    }
+    .links .item a #tt{
+      left: 16px;
+    }
+    .mens svg{
+      transform: rotate(0deg);
+    }
   /*   #link1:hover, #link3:hover,.links .item:hover{
       background-color: #ffffff88;
     } */
@@ -1324,12 +1395,13 @@ h1{
     }
     .tooltipAcount2{
       background: none!important;
+      position: relative;
+      left: 0px;
     }
     .tool{
       top: 16px;
-      left: 8px;
+      left: 8px!important;
       position: relative;
-      background: none;
       color: var(--light);
       box-shadow: 0px 0px 0px var(--light);
       border: none;
