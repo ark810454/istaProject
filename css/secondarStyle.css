@@ -704,7 +704,7 @@ header{
   }
   
   .loader-ring-a {
-    stroke: #917601;
+    stroke: #908c2d;
   }
   
   .loader-ring-b {
@@ -714,7 +714,7 @@ header{
   
   .loader-ring-c {
     animation-name: ringC;
-    stroke: #F7C901;
+    stroke: #8a6b1c;
   }
   
   .loader-ring-d {
@@ -902,7 +902,7 @@ header{
   
   /* loader Principal du site */
   .loaderMain{
-    background-color: var(--black);
+    background-color: #060933;
     position: fixed;
     top: 0;
     left: 0;
