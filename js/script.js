@@ -94,10 +94,10 @@ const caretbottom = document.querySelectorAll('.caret_bottom');
 
   
       function handleMediaQueryChange(mediaQuery) {
+        
         if (mediaQuery.matches) {
          var etatmenu= new Array(link1.length).fill(false);
 for(let i =0; i<link1.length; i++){
-  items1[i].style.display="none"
   items1[i].classList.remove("items1Show");
   items1[i].classList.add("items1Hide");
 link1[i].addEventListener('click', ()=>{
