@@ -1325,6 +1325,7 @@ border-top-right-radius: 16px;border-bottom-right-radius: 16px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    gap: 16px!important;
     align-items: center;
     justify-content: space-between;
     position: relative;
@@ -1499,16 +1500,14 @@ border-top-right-radius: 16px;border-bottom-right-radius: 16px;
   cursor: pointer;
   top: 12px;
 }
-.form .divvv{
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 10px;
+.form .input{
+  gap: 6px;
 }
-.form .divvv label{
+.form  label{
   font-family: var(--inter);
   font-size: 14px;
   color: var(--dark);
+  
 }
 .form .divvv input[type="checkbox"]{
  appearance: none;
@@ -1870,6 +1869,12 @@ to{
   .champ button{
     width: 150px;
   }
+  .tooltipAcount{
+    right: 8px;
+  }
+  .lili{
+    gap: 16px!important;
+  }
 }
 @media screen and (max-width: 512px) {
   .navbar .acount span{
@@ -1943,6 +1948,9 @@ to{
     display: flex;
     height: 30px;
     width: 30px!important;
+}
+.lili{
+  gap: 12px!important;
 }
 .dismissBtnSearch svg{
   width: 16px;
