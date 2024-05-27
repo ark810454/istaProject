@@ -1,3 +1,47 @@
+/* navigation par urls */
+const url = new URL(window.location.href);
+const urlParams = new URLSearchParams(url.search);
+var sectionS = document.querySelectorAll("#home,#revues, #espace,#actu, #message")
+var linkUrl = ["revue_Sc", "Espace_Doc", "actu", "message"];
+var btnUrl = document.querySelectorAll(".navlinks a")
+if (urlParams.has("pg")) {
+const page = urlParams.get('pg');
+
+
+  for(let i = 0; i<sectionS.length; i++){
+    if(page==='revues_Sc'){
+      sectionS[0].style.display="none";
+      sectionS[1].style.display="flex";
+      btnUrl[1].classList.add("active")
+      btnUrl[0].classList.remove("active")
+      
+    } if(page==='espace_Doc'){
+      sectionS[0].style.display="none";
+      sectionS[2].style.display="flex"
+      btnUrl[2].classList.add("active")
+      btnUrl[0].classList.remove("active")
+      
+    } if(page==='actu'){
+      sectionS[0].style.display="none";
+      sectionS[3].style.display="flex"
+      btnUrl[3].classList.add("active")
+      btnUrl[0].classList.remove("active")
+      
+    } if(page==='message'){
+      sectionS[0].style.display="none";
+      sectionS[4].style.display="flex"
+      btnUrl[4].classList.add("active")
+      btnUrl[0].classList.remove("active")
+    }
+
+}}
+
+
+
+
+/* fin urls */
+
+
 /* animer une section au moment du scroll */
 var stop=false;
 function isScrolledIntoView(el) {
@@ -14,168 +58,299 @@ function isScrolledIntoView(el) {
         if (isScrolledIntoView(navScroll)) {
           nav.classList.add("navBg");
           nav.classList.remove("navBg2");
-          console.log("active")
         }else{
           nav.classList.remove("navBg");
           nav.classList.add("navBg2");
-          console.log("desactive")
         }
     
     })
 
-let btnOpenenu = document.querySelectorAll(".btnOpenenu")
-let menu = document.querySelector(".links")
-btnOpenenu[1].style.display="none";
-btnOpenenu[0].addEventListener('click', ()=>{
-  btnOpenenu[0].style.display="none";
-  btnOpenenu[1].style.display="flex";
+let btnOpenenu = document.querySelector(".btnOpenenu")
+let btnOpenenu2 = document.querySelectorAll(".btnOpenenu2")
+let menu = document.querySelector(".navigation")
+let logo = document.querySelector(".logo img")
+let logotext = document.querySelector(".logo a")
+let links = document.querySelectorAll(".navigation span")
+let linkss = document.querySelector(".links")
+let linkssvg = document.querySelectorAll(".navlinks a")
+let etatmenu = false;
+btnOpenenu.addEventListener('click', ()=>{
+  etatmenu = !etatmenu
+  if(etatmenu===true){menu.style.width = "64px";
+    function fff(){
+      
+    logo.style.width="40px";
+    logo.style.height="40px";
+    logotext.style.display="none"
+    for (let i=0; i<links.length; i++){
+    links[i].style.display="none";
+    linkss.style.width="95%";
+    }
+    
+    for (let i=0; i<linkssvg.length; i++){
+      linkssvg[i].style.paddingLeft="12px";
+      }
+    }setTimeout(fff, 300) 
+  }else{menu.style.width = "300px";
+    function fff(){
+       
+    logo.style.width="auto";
+    logo.style.height="auto";
+    logotext.style.display="flex"
+    for (let i=0; i<links.length; i++){
+    links[i].style.display="flex";
+    linkss.style.width="80%";
+    }
+    
+    for (let i=0; i<linkssvg.length; i++){
+      linkssvg[i].style.paddingLeft="10%";
+      }
+   
+    }
+    setTimeout(fff, 300) 
+  }
+  
+})
+
+
+let shg = false
+btnOpenenu2[1].style.display="none";
+btnOpenenu2[0].addEventListener('click', (e)=>{
+  e.stopPropagation();
+  shg = true
+  btnOpenenu2[0].style.display="none";
+  btnOpenenu2[1].style.display="flex";
   menu.classList.remove("closeMenu");
   menu.classList.add("openMenu");
 })
-btnOpenenu[1].addEventListener('click', ()=>{
-  btnOpenenu[1].style.display="none";
-  btnOpenenu[0].style.display="flex";
+window.addEventListener('click', ()=>{
+  shg===false
+  if(shg===true){
+  btnOpenenu2[1].style.display="none";
+  btnOpenenu2[0].style.display="flex";
+  menu.classList.remove("openMenu");
+  menu.classList.add("closeMenu"); }
+  
+})
+btnOpenenu2[1].addEventListener('click', (e)=>{
+  e.stopPropagation();
+  shg=false
+  btnOpenenu2[1].style.display="none";
+  btnOpenenu2[0].style.display="flex";
   menu.classList.remove("openMenu");
   menu.classList.add("closeMenu");
+})
+menu.addEventListener('click', (e)=>{
+  e.stopPropagation()
 })
 
 
 let viewToolTip = document.querySelectorAll("#viewToolTip")
-let tooltipAcount = document.getElementById("items")
-let caret= document.querySelectorAll("#caretbtn");
-var rememberState = false
+let tooltipAcount = document.querySelectorAll("#items")
+let closeTool = document.querySelectorAll(".close")
+var rememberState = [false,false]
 for (let i=0; i<viewToolTip.length; i++){
+  tooltipAcount[i].classList.add("hide");
+    tooltipAcount[i].classList.remove("show");
 window.addEventListener('click', function(){
 
-  rememberState = false
-  if(rememberState === false){
-    tooltipAcount.style.display = "none";
-caret[i].style.transform = "rotate(0deg)"
-caret[i].style.transition = "0.2s transform ease-in-out" 
+  rememberState[i] = false
+  if(rememberState[i] === false){
+    tooltipAcount[i].classList.add("hide");
+    tooltipAcount[i].classList.remove("show");
   }
 })
 
 
-tooltipAcount.addEventListener('click', function(e){
+tooltipAcount[i].addEventListener('click', function(e){
   e.stopPropagation();
-  rememberState = true
-  if(rememberState === true){
-    tooltipAcount.style.display="flex";
-
-caret[i].style.transform = "rotate(180deg)"
-caret[i].style.transition = "0.2s transform ease-in-out" 
+  rememberState[i] = true
+  if(rememberState[i] === true){
+    tooltipAcount[i].classList.add("show");
+    tooltipAcount[i].classList.remove("hide");
   }
 })
+for(let j=0; j< closeTool.length; j++){
+closeTool[j].addEventListener('click', function(e){
+  e.stopPropagation();
+  rememberState[i] = true
+  if(rememberState[i] === true){
+    tooltipAcount[i].classList.add("hide");
+    tooltipAcount[i].classList.remove("show");
+  }
+})
+}
 viewToolTip[i].addEventListener('click', function(e){
   e.stopPropagation();
-  rememberState = !rememberState
-  if(rememberState === true){
-    tooltipAcount.style.display="flex";
-caret[i].style.transform = "rotate(180deg)"
-caret[i].style.transition = "0.2s transform ease-in-out" 
+  document.getElementById("actueh1").textContent="Ajouter une nouvelle actualité"
+  rememberState[i] = !rememberState[i]
+  if(rememberState[i] === true){
+    tooltipAcount[i].classList.add("show");
+    tooltipAcount[i].classList.remove("hide");
   }
   else{
-    tooltipAcount.style.display = "none";
-caret[i].style.transform = "rotate(0deg)";
-caret[i].style.transition = "0.2s transform ease-in-out" ;
+    tooltipAcount[i].classList.add("hide");
+    tooltipAcount[i].classList.remove("show");
   }
   
 
 
 })
-}
- var mediaQuery = window.matchMedia("(max-width: 991px)");
-const link1 = document.querySelectorAll('#link1 a');
-const link11 = document.querySelectorAll('#link1');
-const items1 = document.querySelectorAll('#items1');
-const caretbottom = document.querySelectorAll('.caret_bottom');
 
-
-
-  
-      function handleMediaQueryChange(mediaQuery) {
-        if (mediaQuery.matches) {
-         var etatmenu= new Array(link1.length).fill(false);
-for(let i =0; i<link1.length; i++){
-  items1[i].style.display="none"
-  items1[i].classList.remove("items1Show");
-  items1[i].classList.add("items1Hide");
-link1[i].addEventListener('click', ()=>{
-etatmenu[i] = ! etatmenu[i]
-if(etatmenu[i]===true){
-  items1[i].classList.add("items1Show");
-  items1[i].classList.remove("items1Hide");
-  caretbottom[i].style.transform = "rotate(180deg)"
-caretbottom[i].style.transition = "0.2s transform ease-in-out" 
-}else{
-  items1[i].classList.remove("items1Show");
-  items1[i].classList.add("items1Hide");
-  caretbottom[i].style.transform = "rotate(0deg)"
-caretbottom[i].style.transition = "0.2s transform ease-in-out" 
-}
-})}
-        }
-        else {
-          for(let i =0; i<link11.length; i++){
-            items1[i].classList.remove("items1Show");
-  items1[i].classList.add("items1Hide");
-link11[i].addEventListener('mouseover', function() {
-  items1[i].classList.add("items1Show");
-  items1[i].classList.remove("items1Hide");
-    caretbottom[i].style.transform = "rotate(180deg)"
-caretbottom[i].style.transition = "0.2s transform ease-in-out" 
+let updateBtn = document.querySelectorAll(".svg3");
+updateBtn.forEach(element => {
+  element.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    rememberState[i] = !rememberState[i]
+    if(rememberState[i] === true){
+    tooltipAcount[tooltipAcount.length -1].classList.add("show");
+    tooltipAcount[tooltipAcount.length -1].classList.remove("hide");
+    document.getElementById("actueh1").textContent="Modifier cette actualité ?"
+    }
+  })
 });
-
-link11[i].addEventListener('mouseleave', function() {
-  if (!items1[i].matches(':hover')) {
-    items1[i].classList.remove("items1Show");
-  items1[i].classList.add("items1Hide");
-    caretbottom[i].style.transform = "rotate(0deg)"
-caretbottom[i].style.transition = "0.2s transform ease-in-out" 
-  }
-});}
-        }
-      
-      }
-        handleMediaQueryChange(mediaQuery);
-
-// Ajouter un écouteur d'événement pour gérer les changements d'état du media query
-mediaQuery.addListener(handleMediaQueryChange);
-    
+} 
+  
+let selectbtn = document.querySelectorAll("#selectbtn")
+let delbtn = document.querySelectorAll("#del")
+let annulerbtn = document.querySelectorAll("#annuler")
+let check = document.querySelectorAll("#selectCheck")
+let del = document.querySelectorAll(".svg")
+let popup = document.querySelectorAll(".popupDel")
+let closePopup = document.querySelectorAll(".closes")
+let nbrselect = 0
+/* let tab = new Array(sup.length).fill(false); */
+for(let i=0; i< popup.length; i++){
+popup[i].classList.add("hide");
+popup[i].classList.remove("show");}
+ for(let j=0; j<closePopup.length; j++){
+for(let i=0; i< del.length; i++){
+  del[i].addEventListener('click', ()=>{
+    popup[j].classList.add("show");
+popup[j].classList.remove("hide");
+    document.querySelectorAll("#nbr")[j].textContent= "Supprimer un élément ?";
+  })}
+ 
+    closePopup[j].addEventListener('click', ()=>{
+      popup[j].classList.add("hide");
+  popup[j].classList.remove("show");
+    })
  
 
-
-
-
-let allftMenu = document.querySelectorAll("#ftmenu");
-let allBtnftMenu = document.querySelectorAll("#btnftmenu");
-let allftMenuSize = document.querySelectorAll(".menuList");
-let svgftMenu = document.querySelectorAll("#btnftmenu svg");
-var etatftMenu=[false, false, false, false]
-for(let i=0; i<allBtnftMenu.length; i++){
-  allftMenu[i].classList.remove("items1Show");
-  allftMenu[i].classList.add("items1Hide");
-  allBtnftMenu[i].addEventListener('click', function(){
-    etatftMenu[i]= !etatftMenu[i];
-    if(etatftMenu[i]===true){
-      allftMenu[i].classList.add("items1Show");
-      allftMenu[i].classList.remove("items1Hide");
-      allftMenuSize[i].style.height="max-content";
+  document.querySelectorAll(".annuler")[j].addEventListener('click', ()=>{
+    popup[j].classList.add("hide");
+popup[j].classList.remove("show");
+  })
+ }
+for(let k=0; k<selectbtn.length; k++){
+selectbtn[k].addEventListener('click', ()=>{
+  annulerbtn[k].style.display="flex"
+for(let i=0; i< check.length; i++){
+  del[k].addEventListener('click', ()=>{
+    popup.classList.add("show");
+popup.classList.remove("hide");
+    document.getElementById("nbr").textContent= "Supprimer un élément ?";
+  })
+  check[i].style.display="flex";
+  check[i].addEventListener('change', ()=>{
     
-      svgftMenu[i].style.transform = "rotate(180deg)"
-      svgftMenu[i].style.transition = "0.2s transform ease-in-out" 
+    if(check[i].checked){
+      nbrselect = nbrselect+1
+      selectbtn[k].textContent="Selectionné("+nbrselect+")";
+      delbtn[k].style.display="flex"
+       
+     
+    }else{
+      nbrselect = nbrselect-1
+      selectbtn[k].textContent="Selectionné("+nbrselect+")";
     }
-    else{
-      allftMenu[i].classList.remove("items1Show");
-  allftMenu[i].classList.add("items1Hide");
-      allftMenuSize[i].style.height="30px";
-      svgftMenu[i].style.transform = "rotate(0deg)"
-      svgftMenu[i].style.transition = "0.2s transform ease-in-out" 
+
+    delbtn[k].addEventListener('click', ()=>{
+      popup[k].classList.add("show");
+popup[k].classList.remove("hide");
+      document.querySelectorAll("#nbr")[k].textContent= "Supprimer "+nbrselect+" éléments ?";
+    })
+    closePopup[k].addEventListener('click', ()=>{
+      popup[k].classList.add("hide");
+popup[k].classList.remove("show");
+    })
+
+    document.querySelectorAll(".annuler")[k].addEventListener('click', ()=>{
+      popup[k].classList.add("hide");
+popup[k].classList.remove("show");
+    })
+    
+  })
+ 
+}
+selectbtn[k].textContent="Selectionné("+nbrselect+")";
+})
+selectbtn[k].textContent="Selectionner";
+
+annulerbtn[k].addEventListener('click', ()=>{
+
+  nbrselect=0;
+  for(let j=0; j< check.length; j++){
+  
+  selectbtn[k].textContent="Selectionner";
+  delbtn[k].style.display="none"
+  annulerbtn[k].style.display="none"
+    check[j].style.display="none";
+    check[j].checked=false;
+  }
+
+  /* const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'index.html', true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState ===4 && xhr.status ===200) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(xhr.responseText, 'text/html');
+      const newContainer = doc.querySelector(".revueContent ul");selectbtn.innerHTML="Selectionner";
+      if(newContainer){
+          revue.innerHTML = newContainer.innerHTML;
+          
+      }else{
+        console.error('Erreur de l actualisation')
+      }
+    
+    
     }
+  };
+  xhr.onerror = function() {
+    console.error('erreur réseau lors de l')
+  };
+  xhr.send(); */
+})}
+
+document.querySelector("#message #tout").textContent ="Tout("+ document.querySelectorAll("#message .svg").length +")";
+
+document.querySelector(".back").addEventListener('click', ()=>{
+  document.querySelector(".bgBlur").style.display="none"
+})
+let mess = document.querySelectorAll("#openMess");
+for(let i =0; i<mess.length; i++){
+  mess[i].addEventListener('click', ()=>{
+    document.querySelector(".bgBlur").style.display="flex"
   })
 }
 
-
-
-
-
+let btnSearch = document.querySelector(".dismissBtnSearch");
+let Search = document.querySelector(".champSearch2");
+let section = document.querySelectorAll("section")
+etatSearch = false
+btnSearch.addEventListener('click', (e)=>{
+  e.stopPropagation();
+  etatSearch = !etatSearch
+  if(etatSearch === true){
+    Search.classList.add("ss")  
+    section.forEach(element => {
+      element.classList.add("ss")
+    });
+  }else{
+    Search.classList.remove("ss")
+    section.forEach(element => {
+      element.classList.remove("ss")
+    });
+  }
+  
+})

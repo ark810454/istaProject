@@ -10,60 +10,70 @@
 
     <style>
         body{padding: 0px;margin: 0px;
-  overflow: hidden;
+  overflow: hidden!important;
   position: relative;
   left: 0;
   right: 0;
-  top: O;
+  top: 0;
   background-color: var(--white);}
 .container{
   width: 100%;
+  height: 100dvh!important;
   display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  gap: 50px;
   left: 0;
   right: 0;
-  top: O;
+  top: 0;
   bottom: 0;
   background-color: var(--white);
+  overflow: hidden;
 }
+h1::before{
+    content: '';
+    background: none;
+    width: 0px;
+    height: 0px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+  }
     </style>
 
     <div class="container">
         <div class="form" >
-            <img src="../images/eduo.png" alt="">
+            <img src="../assets/logo-white 3.png">
             <h1>authentification</h1>
+            <span class="ssss">INSTITUT SUPERIEUR DE TECHINIQUES APPLIQUEES, SITE 
+                <span class="gradientText">ADMIN</span></span>
             <div class="input">
-                <label for="name">
+                <label for="name">Email</label>
+                <label id="svgLogin" for="name">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
             </label>
-                <input type="email" name="mail" id="name" placeholder="votre-courriel@gmail.com">
+                <input type="email" name="email" id="name" placeholder="votre-courriel@gmail.com">
             </div>
+           
             <div class="input">
-                <label for="password">
+                <label for="password">Mot de passe</label>
+                <label id="svgLogin" for="password">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" ><path d="M280-400q-33 0-56.5-23.5T200-480q0-33 23.5-56.5T280-560q33 0 56.5 23.5T360-480q0 33-23.5 56.5T280-400Zm0 160q-100 0-170-70T40-480q0-100 70-170t170-70q67 0 121.5 33t86.5 87h352l120 120-180 180-80-60-80 60-85-60h-47q-32 54-86.5 87T280-240Zm0-80q56 0 98.5-34t56.5-86h125l58 41 82-61 71 55 75-75-40-40H435q-14-52-56.5-86T280-640q-66 0-113 47t-47 113q0 66 47 113t113 47Z"/></svg>
             </label> 
                 <input type="password" name="password" id="password" placeholder="Votre mot de passe">
             </div>
-            <div style="width: 100%;" class="divvv">
-                <input type="checkbox" name="checkbox" id="checkbox">
-
-<label for="checkbox">Se souvenir de moi</label>                
-            </div>
+           
             <div class="btnlogin">
                 <button onclick="{
-                    window.location.href = '../index.html'
+                    window.location.href = 'index.html'
                 }">
                     <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" ><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg>
                <span> S'authentifier</span>
                 </button>
                
             </div>
-            <a href="">J'ai oublié le mot de passe</a>
         </div>
     </div>
 </body>

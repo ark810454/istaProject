@@ -8,35 +8,79 @@ function isScrolledIntoView(el) {
   }
   var nav = document.querySelector(".navbar");
   var navScroll = document.querySelector(".navScroll");
+  var sectionS = document.querySelectorAll("#about,#mension, #actu,#revue, #DG,#rx")
+  let mension = document.querySelectorAll(".section")
+  let topBottom = document.querySelectorAll(".boxPlace")
   nav.classList.add("navBg2");
   document.addEventListener("scroll", function () {
   
         if (isScrolledIntoView(navScroll)) {
           nav.classList.add("navBg");
           nav.classList.remove("navBg2");
-          console.log("active")
         }else{
           nav.classList.remove("navBg");
           nav.classList.add("navBg2");
-          console.log("desactive")
         }
+       
+       sectionS.forEach(element => {
+        if(isScrolledIntoView(element)){
+          element.classList.add("visible");
+        }
+       });
+       
+       if(isScrolledIntoView(topBottom[0])){
+        topBottom[0].classList.add("topBottom");
+      }
+      if(isScrolledIntoView(topBottom[1])){
+        topBottom[1].classList.add("topBottom2");
+      }
+      if(isScrolledIntoView(mension[0])){
+        mension[0].classList.add("topBottom");
+      }
+      if(isScrolledIntoView(mension[1])){
+        mension[1].classList.add("topBottom2");
+      }
+      if(isScrolledIntoView(mension[2])){
+        mension[2].classList.add("topBottom3");
+      }
+      if(isScrolledIntoView(document.querySelector(".rightR"))){
+        document.querySelector(".rightR").classList.add("visible")
+      }
+      
     
     })
 
 let btnOpenenu = document.querySelectorAll(".btnOpenenu")
 let menu = document.querySelector(".links")
+let shg = false
 btnOpenenu[1].style.display="none";
-btnOpenenu[0].addEventListener('click', ()=>{
+btnOpenenu[0].addEventListener('click', (e)=>{
+  e.stopPropagation();
+  shg = true
   btnOpenenu[0].style.display="none";
   btnOpenenu[1].style.display="flex";
   menu.classList.remove("closeMenu");
   menu.classList.add("openMenu");
 })
-btnOpenenu[1].addEventListener('click', ()=>{
+window.addEventListener('click', ()=>{
+  shg===false
+  if(shg===true){
+  btnOpenenu[1].style.display="none";
+  btnOpenenu[0].style.display="flex";
+  menu.classList.remove("openMenu");
+  menu.classList.add("closeMenu"); }
+  
+})
+btnOpenenu[1].addEventListener('click', (e)=>{
+  e.stopPropagation();
+  shg=false
   btnOpenenu[1].style.display="none";
   btnOpenenu[0].style.display="flex";
   menu.classList.remove("openMenu");
   menu.classList.add("closeMenu");
+})
+menu.addEventListener('click', (e)=>{
+  e.stopPropagation()
 })
 
 
