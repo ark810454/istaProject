@@ -17,10 +17,16 @@
     display: block;
     box-shadow: 30px -30px 1px #F5F5FB;
     width: 100%!important;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 .slideHero{
-    padding: 20px;
+    padding: 10px;
+    width: 90%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
 }
 h1{
     font-size: 40px;
@@ -30,6 +36,11 @@ header h1{
     font-size: 72px;
     font-family: var(--montserrat);
     font-weight: 500;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limite le texte à 3 lignes */
+    -webkit-box-orient: vertical;
 }
 header h1::before{
     background-color: #8a6b1c;
@@ -49,6 +60,11 @@ header{
 }
 .titleText{
     font-family: 'Montserrat',sans-serif;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limite le texte à 3 lignes */
+    -webkit-box-orient: vertical;
 }
 .upTitle{
     font-family: var(--inter);
@@ -74,7 +90,7 @@ header{
     justify-content: space-between;
 }
 .heroText .swiper-slide .left{
-   width: 40%;
+   width: 90%;
     animation: animeX 1s ease-out forwards;
     margin-left: 10px;
 }
@@ -91,19 +107,18 @@ header{
     width: 85%;
     margin: 0 auto;
 }
-.ctrlPane .swiper-button-next{
+.ctrlPane .swiper-button-prev{
     display: none!important;
 }
-.ctrlPane .swiper-button-prev{
-    left: 95% !important;
+.ctrlPane .swiper-button-next{
+    left: 90% !important;
     top: 90% !important;
-    transform: rotate(180deg);
 }
-.ctrlPane .swiper-button-prev::after{
-    font-size: 18px!important;
+.ctrlPane .swiper-button-next::after{
+    font-size: 12px!important;
     background: var(--primary)!important;
     color: var(--white) !important;
-    padding:5px 10px;
+    padding:8px 12px;
     border-radius: 10px;
 }
 @keyframes anime {
@@ -445,9 +460,24 @@ header{
     }
 }
 
+.swiper{
+    height: auto!important;
+   
 
+   }
+
+   .sliders{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
 
 /* medium screen */
+@media screen and ( max-width:1274px ) {
+    .heroText{
+        width: 90%;
+    }
+}
 @media screen and ( max-width:1174px ) {
   
     /* about place */
@@ -480,14 +510,12 @@ header{
     .slideHero{
         padding: 0px; 
     }
-    .heroText .swiper-slide{
-       gap: 50px!important;
-       margin: auto;
+    .heroText{
+       width: 90%!important;
+       justify-content: space-between;
     }
-    .heroText .swiper-slide .left{
-        width: 500px!important;
-        margin: 0!important;
-    }
+   
+   
     .slideHero img{
         width: 100%;
     }
@@ -511,20 +539,41 @@ header{
     }
 }
 
+@media screen and ( max-width:991px ) {
+     .heroText{
+        width: 90%!important;
+        flex-direction: column!important;
+    }
+    .heroText .swiperHero{
+        width: 90%!important;
+        display: flex;
+        flex-direction: column!important;
+        align-items: center;
+        justify-content: center;
+    }
+ 
+    .heroText .swiperHero .swiper-slide{
+        width: 100%!important;
+    }
+    .heroText .swiperHero .left, .heroText .swiperHero .right{
+        width: 100%!important;
+        }
+    .swiperHero img{
+        margin: 0!important;
+        width: 100%!important;
 
+    }
+}
 @media screen and ( max-width:850px ) {
     #about{
         padding: 0;
     }
-    .heroText{
-        width: 90%!important;
-        margin-top:3% !important;
-    }
+   
     .heroText .swiper-slide{
         justify-content: flex-start!important;
-        gap: 50px!important;
         flex-direction: column!important;
-        margin: auto;
+    
+        height: auto!important;
      }
      .heroText .swiper-slide .left{
         width: 90% !important;
@@ -618,6 +667,8 @@ header{
     h1{
         font-size: 40px!important;
     }
+    .heroText .swiperHero{
+        width: 100%!important;}
     .heroText .swiper-slide .left{
         width: 100%!important;
         margin: 0 auto;
@@ -631,20 +682,21 @@ header{
     }
     .heroText .swiper-slide{
         width: 100%!important;
-        margin: auto;
         flex-direction: column!important;
         align-items: center;
         justify-content: center;
-        gap: 50px;
         
     }
     .slideHero{
         width: 100%;
+        height: 200px;
         margin: 0!important;
         padding: 0!important;
     }
     .slideHero img{
-        width: 80%!important;
+        width: 90%!important;
+        box-shadow: 20px -20px 1px #F5F5FB;
+      
         /* margin: 0 auto!important;  */
     }
     .ctrlPane .swiper-button-prev{
@@ -848,3 +900,241 @@ header{
     }
     
 }
+
+
+
+
+.loader {
+    width: 6em;
+    height: 6em;
+  }
+  
+  .loader-ring {
+    animation: ringA 2s linear infinite;
+  }
+  
+  .loader-ring-a {
+    stroke: #908c2d;
+  }
+  
+  .loader-ring-b {
+    animation-name: ringB;
+    stroke: #cfcfa4;
+  }
+  
+  .loader-ring-c {
+    animation-name: ringC;
+    stroke: #8a6b1c;
+  }
+  
+  .loader-ring-d {
+    animation-name: ringD;
+    stroke: #FFFFD3;
+  }
+  
+  /* Animations */
+  @keyframes ringA {
+    from, 4% {
+      stroke-dasharray: 0 660;
+      stroke-width: 20;
+      stroke-dashoffset: -330;
+    }
+  
+    12% {
+      stroke-dasharray: 60 600;
+      stroke-width: 30;
+      stroke-dashoffset: -335;
+    }
+  
+    32% {
+      stroke-dasharray: 60 600;
+      stroke-width: 30;
+      stroke-dashoffset: -595;
+    }
+  
+    40%, 54% {
+      stroke-dasharray: 0 660;
+      stroke-width: 20;
+      stroke-dashoffset: -660;
+    }
+  
+    62% {
+      stroke-dasharray: 60 600;
+      stroke-width: 30;
+      stroke-dashoffset: -665;
+    }
+  
+    82% {
+      stroke-dasharray: 60 600;
+      stroke-width: 30;
+      stroke-dashoffset: -925;
+    }
+  
+    90%, to {
+      stroke-dasharray: 0 660;
+      stroke-width: 20;
+      stroke-dashoffset: -990;
+    }
+  }
+  
+  @keyframes ringB {
+    from, 12% {
+      stroke-dasharray: 0 220;
+      stroke-width: 20;
+      stroke-dashoffset: -110;
+    }
+  
+    20% {
+      stroke-dasharray: 20 200;
+      stroke-width: 30;
+      stroke-dashoffset: -115;
+    }
+  
+    40% {
+      stroke-dasharray: 20 200;
+      stroke-width: 30;
+      stroke-dashoffset: -195;
+    }
+  
+    48%, 62% {
+      stroke-dasharray: 0 220;
+      stroke-width: 20;
+      stroke-dashoffset: -220;
+    }
+  
+    70% {
+      stroke-dasharray: 20 200;
+      stroke-width: 30;
+      stroke-dashoffset: -225;
+    }
+  
+    90% {
+      stroke-dasharray: 20 200;
+      stroke-width: 30;
+      stroke-dashoffset: -305;
+    }
+  
+    98%, to {
+      stroke-dasharray: 0 220;
+      stroke-width: 20;
+      stroke-dashoffset: -330;
+    }
+  }
+  
+  @keyframes ringC {
+    from {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
+      stroke-dashoffset: 0;
+    }
+  
+    8% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -5;
+    }
+  
+    28% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -175;
+    }
+  
+    36%, 58% {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
+      stroke-dashoffset: -220;
+    }
+  
+    66% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -225;
+    }
+  
+    86% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -395;
+    }
+  
+    94%, to {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
+      stroke-dashoffset: -440;
+    }
+  }
+  
+  @keyframes ringD {
+    from, 8% {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
+      stroke-dashoffset: 0;
+    }
+  
+    16% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -5;
+    }
+  
+    36% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -175;
+    }
+  
+    44%, 50% {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
+      stroke-dashoffset: -220;
+    }
+  
+    58% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -225;
+    }
+  
+    78% {
+      stroke-dasharray: 40 400;
+      stroke-width: 30;
+      stroke-dashoffset: -395;
+    }
+  
+    86%, to {
+      stroke-dasharray: 0 440;
+      stroke-width: 20;
+      stroke-dashoffset: -440;
+    }
+  }
+  
+  
+  /* loader Principal du site */
+  .loaderMain{
+    background-color: #060933;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 33333333;
+  }
+  .loaderMain .loadContainer{
+    width: 3.1rem;
+    height: 3.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;z-index: 555555555555555555;
+  }
+  .loaderMain .bg{
+   object-fit: cover;
+    width: 100%;height: 100%;
+  }
