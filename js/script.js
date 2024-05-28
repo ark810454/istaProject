@@ -11,15 +11,15 @@ function isScrolledIntoView(el) {
   nav.classList.add("navBg2");
   document.addEventListener("scroll", function () {
   
-        if (isScrolledIntoView(navScroll)) {
-          nav.classList.add("navBg");
-          nav.classList.remove("navBg2");
-          console.log("active")
-        }else{
-          nav.classList.remove("navBg");
-          nav.classList.add("navBg2");
-          console.log("desactive")
-        }
+    if (isScrolledIntoView(navScroll)) {
+      nav.classList.add("navBg");
+      nav.classList.remove("navBg2");
+      console.log("active")
+    }else{
+      nav.classList.remove("navBg");
+      nav.classList.add("navBg2");
+      console.log("desactive")
+    }
     
     })
 
@@ -73,7 +73,7 @@ viewToolTip[i].addEventListener('click', function(e){
     tooltipAcount.style.display="flex";
 caret[i].style.transform = "rotate(180deg)"
 caret[i].style.transition = "0.2s transform ease-in-out" 
-  }
+  } 
   else{
     tooltipAcount.style.display = "none";
 caret[i].style.transform = "rotate(0deg)";

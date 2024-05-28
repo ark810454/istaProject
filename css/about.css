@@ -1,0 +1,227 @@
+.aboutHeader{
+    height:30dvh!important;
+    background: linear-gradient(190deg,#D9D9D9,rgba(217, 217, 217, 0.1),#737373),url(../assets/collation-grade-ista.jpg)!important;
+    background-repeat: no-repeat!important;
+    background-position: cover!important;
+    background-size: 100% 100%!important;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end!important;
+    position: relative;
+}
+h1{
+    font-family: var(--bebas_neue);
+}
+.maincomponentStructure h1{
+    color: var(--primary) !important;
+}
+.smallTitle{
+    color: var(--primary) !important;
+}
+p{
+    font-family: var(--inter);
+}
+.bigText{
+    font-size: 100px;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(88, 92, 176, 0.103);
+    font-family: var(--bebas_neue);
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    opacity: .5;
+}
+.secondPl .bigText{
+    position: absolute !important;
+    bottom: 1% !important;
+    left: 40% !important;
+}
+.smallTextTag{
+    font-size: 14px;
+    color: var(--secondary);
+}
+.maincomponentStructure{
+    display: flex;
+    gap: 50px;
+    height: 100dvh;
+    cursor: pointer;
+    position: relative;
+    margin-top: 50px;
+}
+.maincomponentStructure div{
+    padding: 10px;
+    text-align: justify;
+}
+.shape{
+    /* background-color: red; */
+    position: absolute;
+    height: 200px;
+    display: block;
+    left: 30%;
+    bottom: 8%;
+    border-right: 2px dashed rgba(88, 92, 176, 0.103);
+}
+.secondPl .shape{
+    left: 34% !important;
+}
+.shape .ronderShape{
+    border: 1px solid rgba(88, 92, 176, 0.103);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shape2{
+    position: absolute;
+    width:  50px;
+    display: block;
+    left: 3%;
+    bottom: 15%;
+    transform: rotate(45deg);
+    opacity: .1;
+}
+.shape2:nth-child(2){
+    position: absolute;
+    width:  30px;
+    display: block;
+    left: 8%;
+    bottom: 10%;
+    transform: rotate(45deg);
+    opacity: .1;
+}
+.shape2 img{
+    width: 100%;
+}
+.fillRonder{
+    height: 10px;
+    width: 10px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+.one{
+    position: relative;
+}
+.two{
+   align-self: center;
+}
+.tree{
+   align-self: flex-end;
+}
+.fistPl .imageCont,.secondPl .imageCont{
+    width: 300px;
+    position: relative;
+}
+.imageCont img{
+    width: 100%;
+    border-radius: 20px;
+}
+.imageCont::before{
+    content: '';
+    background: url(../assets/arrow-1.png);
+    display: block;
+    width: 150px;
+    height: 50px;
+    background-position: cover;
+    background-size: 100%  100%;
+    background-repeat: no-repeats;
+    position: absolute;
+    right: -50px;
+    top: -30px;
+
+}
+li{
+    font-family: var(--inter);
+}
+.maincomponentStructure:hover .ronderShape{
+    /* background-color: rgba(3, 9, 124, 0.39);
+    box-shadow: 
+    10px 10px 4px rgba(3, 9, 124, 0.19),
+    0px 1px 15px rgba(3, 9, 124, 0.39) */
+    animation: animaBull .4s ease-out forwards;
+}
+@keyframes animaBull {
+    to{
+        background-color: rgba(3, 9, 124, 0.39);
+        box-shadow: 
+        /* 10px 10px 4px rgba(3, 9, 124, 0.19), */
+        0px 1px 15px rgba(3, 9, 124, 0.39)
+        ;
+    }
+}
+.secondPl{
+    position: relative;
+}
+.bigTitle{
+    font-family: var(--bebas_neue);
+    font-size: 40px;
+    font-weight: 400;
+    position: relative;
+    text-align: left;
+    font-weight: 400;
+    color: var(--primary);
+}
+.w-50{
+    width: 50%;
+}
+.containerImage{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid rgba(3, 9, 124, 0.39);
+    border-radius: 20px;
+}
+.containerImage img{
+    width: 100%;
+}
+/* medium screen */
+@media screen and ( max-width:1174px ) {
+    .maincomponentStructure{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: fit-content !important;
+        cursor: pointer;
+        position: relative;
+        margin-top: 50px;
+    }
+    .shape{
+        display: none;
+    }
+    .two{
+        display: none;
+    }
+    .maincomponentStructure div{
+        padding: 0px !important;
+        text-align: justify;
+    }
+    .maincomponentStructure .bigTitle{
+        font-size: 40px;
+        text-align: left !important;
+    }
+    
+}
+@media screen and ( max-width:865px ) {
+    .w-50{
+        width: 100%;
+        font-size: 32px;
+    }
+    .containerImage{
+        width: calc(100%-5px);
+        margin: 0 auto;
+        margin-top: 20px;
+        padding:5px;
+        border: 1px solid rgba(3, 9, 124, 0.39);
+        border-radius: 20px;
+    }
+    p{
+        text-align: justify;
+    }
+}

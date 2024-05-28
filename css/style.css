@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Freehand&display=swap');
 @import './secondarStyle.css';
+@import './actualite.css';
+@import './mension.css';
+@import './about.css';
+@import './academique.css';
 
 :root{
   --primary : #030a7c;
@@ -824,13 +828,13 @@ h1{
     border-radius: 1px;
     
   }
-  .elementor-column ::-webkit-scrollbar{
+  .elementor-column h3 iframe::-webkit-scrollbar{
     background: none;
     width: 5px;
     height: 5px;
     
   }
-  .elementor-column ::-webkit-scrollbar-thumb{
+  .elementor-column h3 iframe::-webkit-scrollbar-thumb{
     background-color: #060933;
     border-radius: 1px;
     

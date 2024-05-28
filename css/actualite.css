@@ -1,0 +1,265 @@
+
+.actuaHeader{
+    height:30dvh!important;
+    background: linear-gradient(180deg,#D9D9D9,rgba(217, 217, 217, 0.1),#737373),url(../assets/1860275895ExpoBeton\ \(1\)\ 1.png)!important;
+    background-repeat: no-repeat!important;
+    background-position: cover!important;
+    background-size: 100% 100%!important;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end!important;
+    position: relative;
+}
+.actuaTitleHeader{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+}
+.actuaTitleHeader h1{
+    font-size: 40px;
+    font-family: var(--bebas_neue);
+    color: var(--dark);
+    font-weight: 400;
+    position: relative;
+    text-align: left;
+    color: var(--white);
+}
+.actuaTitleHeader h1::before{
+    content: '';
+    background-color: var(--secondary);
+    width: 80px;
+    height: 8px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+  }
+.actuaTitleHeader p{
+    font-family: var(--inter);
+    color: var(--white);
+    font-size: 16px;
+}
+#mainAct{
+    width:100%!important;
+    margin-top: 50px;
+}
+.bodyContaint{
+    display: flex;
+    gap: 10px;
+    width: 100% !important;
+}
+.bodyContaint .left{
+    width: 60%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.bodyContaint .right{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.actuItem{
+    padding: 5px 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: var(--white);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(0, 0, 0,0.1);
+    border-radius: 8px;
+}
+.headerActu{
+    background:linear-gradient(180deg,rgba(217, 217, 217, 0),rgba(165, 165, 165, 0.103),#737373),url(../assets/Rectangle\ 38.png);
+    border-radius: 5px;
+    width: 100%;
+    height: 300px!important;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* overflow: hidden; */
+    position: relative;
+}
+.headerActu2{
+    background:linear-gradient(180deg,rgba(217, 217, 217, 0),rgba(165, 165, 165, 0.103),#737373),url(../assets/1943610297invention-innovation-hydrolienne-myhydro-001-780x470.jpg);
+
+}
+.badgeActu{
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 5px 20px;
+    color: white;
+    font-family: var(--inter);
+    font-size: 16px;
+    border-radius: 5px;
+    gap: 10px;
+    position: absolute;
+    left:5%;
+    bottom: -10%;
+
+}
+.badgeActu svg{
+    padding: 0;
+}
+.DateAndAlert{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    padding: 5px ;
+    align-self: flex-end;
+}
+.DateAndAlert p{
+    margin: 0!important;
+}
+.bodyNews{
+    margin-top:50px ;
+}
+.bodyNews p{
+    text-align: justify;
+    font-family: var(--montserrat);
+    padding: 20px;
+}
+.actuFooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+/* right side */
+.searchSide{
+    background-color: var(--white);
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search{
+    display: flex;
+    gap: 10px;
+}
+.searchBar{
+    height: 40px;
+    border: 1px solid rgb(0, 0, 0,0.1);
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    color: rgba(30, 30, 30, 0.719);
+    font-size: 15px;
+
+}
+.searchSide button{
+    background: var(--white)!important;
+    border: 1px solid rgb(0, 0, 0,0.1);
+    padding: 10px;
+    padding-top: 20px;
+}
+.moreActu{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid rgb(0, 0, 0,0.1);
+    border-radius: 8px;
+}
+.moreActu .smallTitle{
+    text-align: center;
+    /* background-color: red; */
+    position: relative;
+    top: 10px;
+}
+.moreActu .smallTitle::before{
+    content: '';
+    background-color: var(--secondary);
+    width: 80px;
+    height: 8px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -16px;
+    left: 24%;
+}
+.recentsActu{
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.headerItem{
+    width: 20%!important;
+    height: 60px!important;
+    /* background-image: url(../assets/Rectangle\ 11.png);
+    background-position: cover;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 5px; */
+}
+.headerItem img{
+    width: 100%!important;
+    height: 100%!important;
+    border-radius: 5px;
+
+}
+.recentItem{
+    display: flex;
+    gap: 30px;
+    border-bottom: 1px solid rgb(0, 0, 0,0.1);
+    width: 100%;
+
+}
+.bodyItem{
+    width: 80%;
+
+}
+.bodyItem p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media screen and (max-width: 850px) {
+    .bodyContaint{
+        flex-direction: column;
+    }
+    .bodyContaint .left{
+        width: 100%;
+    }
+    .bodyContaint .right{
+        width: 100%;
+        margin-top: 50px
+    }
+    .badgeActu{
+        bottom: -5%;
+    }
+    .moreActu{
+        width: 100%;
+    }
+    .actuaHeader{
+        background-position: cover!important;
+        background-size: 100% 100%;
+    }
+    .bodyNews{
+        width: 90%;
+        margin: 50px auto;
+    }
+    .bodyContaint .right{
+        flex-direction: column-reverse!important;
+    }
+    .searchSide,.search{
+        width: 100%!important;
+    }
+    .searchBar{
+        width: 90%;
+    }
+    .moreActu .smallTitle{
+        text-align: left;
+        margin-left: 20px;
+    }
+    .moreActu .smallTitle::before{
+        left: 0;
+    }
+}

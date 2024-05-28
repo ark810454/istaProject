@@ -243,6 +243,129 @@ header{
         align-items: center;
     }
 
+    /* actualité side */
+
+    #actu{
+        width: 100%;
+        /* background: url(../assets/shape-5\ 1.png);
+        background-position: center;
+        background-size:100%; */
+        padding-bottom: 100px;
+        position: relative;
+    }
+    .bck{
+        background: url(../assets/shape-5\ 1.png);
+        background-position: top;
+        background-size:100% 100%;
+        position:absolute;
+        display: block;
+        width: 100%;
+        height: 200px;
+        top: 60%;
+        z-index: 0;
+    }
+    #actu .containerLg{
+        display: flex;
+        flex-direction: column;
+        gap:50px;
+    }
+    .actualNews{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        z-index: 1;
+    }
+    .newItems{
+        background-color: var(--light);
+        width: 30%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .headerNews{
+        width: 100%;
+        position: relative;
+    }
+    .tag{
+        box-sizing: border-box;
+        display: block;
+        width: 80%;
+        /* margin:0 auto; */
+        position: absolute;
+        background-color: var(--secondary);
+        /* padding: 5px; */
+        font-family: var(--montserrat);
+        font-size:14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 8px;
+        color:var(--white);
+        top:85%;
+        left: 10%;
+    }
+    .headerNews img{
+        width: 100%!important;
+        height: 200px;
+    }
+    .contentNews{
+        padding: 20px;
+    }
+    .feeds{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .link{
+        color:#060933;
+        font-family: var(--inter);
+    }
+    .link a{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .link a span{
+        background-color: rgba(217, 217, 217, 0.5);
+        padding:5px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+    }
+    .feed{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .feed div{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--secondary);
+    }
+    .textNews{
+        font-family: var(--montserrat);
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .seeMoreNewBtn{
+        background: var(--grandient);
+        color: var(--white);
+        display: flex;
+        gap: 15px;
+        align-items: center!important;
+        font-family: var(--inter);
+        font-size: 16px;
+        padding: 10px 20px;
+        width: fit-content;
+        align-self: flex-end;
+    }
+    .seeMoreNewBtn svg{
+        fill: var(--white)!important;
+    }
+
     /* revue style place */
     #revue{
         background: linear-gradient(45deg,rgba(3, 9, 124, 0.3),rgba(3, 9, 124, 0.3)),url(../assets/Texture.png);
@@ -331,7 +454,28 @@ header{
     #about{
         gap: 50px;
       
-    }}
+    }
+    /* starting the actuality section */
+    .actualNews{
+        /* flex-direction: column; */   
+        gap: 50px;
+    }
+    .newItems{
+        width: 40%;
+    }
+    .bck{
+        background: url(../assets/shape-5\ 1.png);
+        background-position: top;
+        background-size:cover;
+        position:absolute;
+        display: block;
+        width: 100%;
+        height: 200px;
+        top: 70%;
+        z-index: 0;
+    }
+    /*  */
+}
 @media screen and ( max-width:1024px ) {
     .slideHero{
         padding: 0px; 
@@ -361,7 +505,7 @@ header{
     .rightA .swiper-slide img{
         width: 100%;
     }
-    /* revue place */
+   
     .rightR .swiper {
         width: 400px !important;
     }
@@ -399,6 +543,41 @@ header{
         padding: 0;
         gap: 50px;
     }
+    /* actuality section */
+    .actualNews{
+        flex-direction: column;
+        }
+        .newItems{
+            width: 70%;
+            z-index: 1;
+        }
+        .contentNews{
+            padding: 30px;
+        }
+
+        .bck{
+            background: url(../assets/shape-5\ 1.png);
+            background-position: top;
+            background-size:cover;
+            position:absolute;
+            display: block;
+            width: 100%;
+            height: 200px;
+            top: 80%;
+            z-index: 0;
+        }
+        .headerNews img{
+            width: 100%!important;
+            height: 200px;
+            object-fit: cover;
+        }
+        .tag{
+            width: 50%;
+            top:85%;
+            left: 25%;
+        }
+        
+        /*  */
     /* revue resizing */
     .revueContent{
         flex-direction: column!important;
@@ -419,7 +598,13 @@ header{
 }
 /* end */
 
-
+@media screen and ( max-width:670px ){
+    .tag{
+        width: 70%;
+        top:85%;
+        left: 15%;
+    }
+}
 /* very small screen */
 
 /* 450px screen size */
@@ -510,6 +695,31 @@ header{
         width: 350px!important;
         transform: translateX(0px);
     }
+    /* starting the actuality section */
+    .actualNews{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .newItems{
+        width: 100%;
+    }
+    .bck{
+        background: url(../assets/shape-5\ 1.png);
+        background-position: top;
+        background-size:cover;
+        position:absolute;
+        display: block;
+        width: 100%;
+        height: 200px;
+        top: 80%;
+        z-index: 0;
+    }
+    .tag{
+        width: 70%;
+        top:85%;
+        left: 15%;
+    }
+    /*  */
 
     /* starting with revue section */
     .revueContent{
