@@ -130,8 +130,3 @@ for(let i=0; i<allBtnftMenu.length; i++){
     }
   })
 }
-
-
-
-
-
