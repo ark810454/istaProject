@@ -54,19 +54,24 @@ function isScrolledIntoView(el) {
       }
       
     
-
 let btnOpenenu = document.querySelectorAll(".btnOpenenu")
 let menu = document.querySelector(".links")
 let shg = false
+
 btnOpenenu[1].style.display="none";
-btnOpenenu[0].addEventListener('click', (e)=>{
-  e.stopPropagation();
-  shg = true
+btnOpenenu[0].addEventListener('click', ()=>{
   btnOpenenu[0].style.display="none";
   btnOpenenu[1].style.display="flex";
   menu.classList.remove("closeMenu");
   menu.classList.add("openMenu");
 })
+btnOpenenu[1].addEventListener('click', ()=>{
+  btnOpenenu[1].style.display="none";
+  btnOpenenu[0].style.display="flex";
+  menu.classList.remove("openMenu");
+  menu.classList.add("closeMenu");
+})
+
 window.addEventListener('click', ()=>{
   shg===false
   if(shg===true){
