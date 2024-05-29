@@ -4,11 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../assets/logo-white 3.png" type="image/x-icon">
 </head>
-<body id="bb">
-    
+<body id="contactPage">
+    <main class="mainContact cont">
+        <div class="header">
+            <div class="containerImg">
+                <img src="../assets/logo-white 3.png" alt="logoIsta">
+            </div>
+            <div class="bigTitle">Institut Supérieur des techniques appliquées<br>(ISTA)</div>
+        </div>
+        <div class="formContatctContainer">
+            <h1>Contact</h1>
+            <p class="smallText">Mettez nous au courant de vos préoccupation</p>
+            <form action="" method="post">
+                <input type="text" name="userName" id="userName" placeholder="Entrez votre nom">
+                <input type="text" name="userLastname" id="userLastname" placeholder="Entrez votre prenom">
+                <select name="titre" id="titre">
+                    <option value="Etudiant(e)">Etudiant(e)</option>
+                    <option value="Parent">Parent</option>
+                    <option value="Proffesseur">Proffesseur</option>
+                    <option value="Autres">Autres</option>
+                </select>
+                <input type="email" name="userEmail" id="userEmail" placeholder="Entrez votre adresse email">
+                <textarea name="message" id="message" rows="10" cols="10">
+                    Ecrivez votre message ici
+                </textarea>
+                <button type="submit">Envoyez</button>
+            </form>
 
-
+        </div>
+    </main>
     <script src="../js/script.js"></script>
 </body>
 </html>

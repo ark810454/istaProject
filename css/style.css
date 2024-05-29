@@ -8,6 +8,7 @@
 @import './mension.css';
 @import './about.css';
 @import './academique.css';
+@import './contact.css';
 
 :root{
   --primary : #030a7c;
