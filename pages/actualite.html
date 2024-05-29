@@ -755,45 +755,24 @@
   window.addEventListener('load', function(e){
       loader.style.display = "none";
   })
-
   </script>
-  <!-- fin loader --> 
-        <!-- all external scripts and moduleq  -->
-        <script src="../swiper/swiper-bundle.min.js"></script>
-        <script src="../js/script.js"></script>
-        <script>
-  let svgMension = document.querySelectorAll(".svgimg");
-  let sibling =  document.querySelectorAll(".sibling");
-  for (let i = 0; i < svgMension.length; i++){  
-  svgMension[i].addEventListener('mouseenter', ()=>{
-    
-     sibling[i].style.opacity="1";
-     sibling[i].classList.add("topnime")
-     sibling[i].classList.remove("bottomnime")
-  })
-  svgMension[i].addEventListener('mouseleave', ()=>{
-    
-    sibling[i].style.opacity="0";
-    sibling[i].classList.remove("topnime")
-    sibling[i].classList.add("bottomnime")
-  })
-  }
-  let section = document.querySelectorAll(".section");
-  let sec =  document.querySelectorAll(".sec");
-  let hoverSec =  document.querySelectorAll(".hoverSec");
-  for (let i = 0; i < section.length; i++){  
-  section[i].addEventListener('mouseenter', ()=>{
-    
-     hoverSec[i].style.opacity="1";
-     sec[i].classList.add("sizefade");
-     sec[i].classList.remove("sizeadd");
-  })
-  section[i].addEventListener('mouseleave', ()=>{
-      sec[i].classList.add("sizeadd");
-      sec[i].classList.remove("sizefade");
-      hoverSec[i].style.opacity="0";
-  })
-  }  
-      </script>
+  <script>
+    var nav = document.querySelector(".navbar");
+    var navScroll = document.querySelector(".navScroll");
+    window.addEventListener('scroll',()=>{
+      if (window.scrollY >=350) {
+        nav.classList.add("navBg");
+        nav.classList.remove("navBg2");
+      }else{
+        nav.classList.remove("navBg");
+        nav.classList.add("navBg2");}
+    })
+  </script>
+  <!-- all external scripts and moduleq  -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../swiper/swiper-bundle.min.js"></script>
+  <script src="../js/fix.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
       </body>
     </html>
