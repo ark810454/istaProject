@@ -27,6 +27,7 @@
   --montserrat : "Montserrat", sans-serif;
   --freehand : "Edu NSW ACT Foundation", cursive;
   --bebas_neue : 'Bebas Neue', sans-serif;
+  --essai:#8a0101f1;
 }
 body{padding: 0px;margin: 0px;
     overflow-x: hidden;

@@ -19,23 +19,39 @@
             <h1>Contact</h1>
             <p class="smallText">Mettez nous au courant de vos préoccupation</p>
             <form action="" method="post">
-                <input type="text" name="userName" id="userName" placeholder="Entrez votre nom">
-                <input type="text" name="userLastname" id="userLastname" placeholder="Entrez votre prenom">
-                <select name="titre" id="titre">
-                    <option value="Etudiant(e)">Etudiant(e)</option>
-                    <option value="Parent">Parent</option>
-                    <option value="Proffesseur">Proffesseur</option>
-                    <option value="Autres">Autres</option>
-                </select>
-                <input type="email" name="userEmail" id="userEmail" placeholder="Entrez votre adresse email">
-                <textarea name="message" id="message" rows="10" cols="10">
-                    Ecrivez votre message ici
-                </textarea>
+                <div class="form-ctrl">
+                    <input type="text" name="userName" id="userName" placeholder="Entrez votre nom">
+                    <label for="" class="form-error"></label>
+                </div>
+                <div class="form-ctrl">
+                    <input type="text" name="userLastname" id="userLastname" placeholder="Entrez votre prenom">
+                    <label for="" class="form-error"></label>
+                </div>
+                <div class="form-ctrl">
+                    <select name="titre" id="titre">
+                        <option value="Etudiant(e)">Etudiant(e)</option>
+                        <option value="Parent">Parent</option>
+                        <option value="Proffesseur">Proffesseur</option>
+                        <option value="Autres">Autres</option>
+                    </select>
+                    <label for="" class="form-error"></label>
+                </div>
+                <div class="form-ctrl">
+                    <input type="email" name="userEmail" id="userEmail" placeholder="Entrez votre adresse email">
+                    <label for="" class="form-error"></label>
+                </div>
+                <div class="form-ctrl">
+                    <textarea name="message" id="message" rows="10" cols="5">
+                        Ecrivez votre message ici
+                    </textarea>
+                    <label for="" class="form-error"></label>
+                </div>        
                 <button type="submit">Envoyez</button>
             </form>
 
         </div>
     </main>
-    <script src="../js/script.js"></script>
+    <!-- <script src="../js/script.js"></script> -->
+    <script src="../js/formControl.js"></script>
 </body>
 </html>

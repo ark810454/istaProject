@@ -24,7 +24,7 @@
     border-radius: 10px;
 } */
 .mainContact .header .bigTitle{
-    width: 50%;
+    width: 70%;
     text-align: center;
     color: var(--black);
 }
@@ -44,6 +44,43 @@
     display: grid;
     gap: 10px;
     margin-top: 10px;
+}
+.errorMessage{
+    background-color: rgba(88, 92, 176, 0.342);
+    color: white;
+    width: fit-content;
+    padding: 20px;
+    z-index: 2222222222;
+    position: absolute;
+    right: 20px;
+    top:50px;
+    font-family: var(--inter);
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    gap: 10px;
+
+}
+.errorMessage::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    width: 10px;
+    background-color: var(--primary);
+}
+.form-ctrl{
+    display: grid;
+}
+.form-error{
+    font-size: 12px;
+    color: rgba(255, 0, 0, 0.74);
+    font-family: var(--inter);
+
 }
 .formContatctContainer form input{
     height: 30px;
@@ -70,6 +107,10 @@
     font-family: var(--inter);
     color: #616060;
     text-align: left;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .formContatctContainer form textarea::-webkit-scrollbar-thumb{
     width: 5px;
@@ -115,6 +156,9 @@
     .formContatctContainer form textarea{
         width: 90%;
     }
+    .bigTitle{
+        width: 90%;
+    }
 }
 @media screen and ( max-width:650px ){
     body{
@@ -127,13 +171,19 @@
     .mainContact{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 30% 70%;
+        grid-template-rows: 20% 80%;
         height: 100dvh;
     }
     .mainContact .header{
         flex-direction: row !important;
         align-items: center;
         gap: 50px;
+        height: fit-content;
+        padding: 20px;
+    }
+    .mainContact .header .bigTitle{
+        font-size: 24px !important;
+        width: 100%;
     }
     .mainContact .header .bigTitle{
         text-align: center;
