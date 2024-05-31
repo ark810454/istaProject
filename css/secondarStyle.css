@@ -516,6 +516,9 @@ box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
        width: 90%!important;
        justify-content: space-between;
     }
+    .w--10{
+        width: 80%;
+    }
    
    
     .slideHero img{
@@ -570,7 +573,9 @@ box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
     #about{
         padding: 0;
     }
-   
+    .w--10{
+        width: 90%;
+    }
     .heroText .swiper-slide{
         justify-content: flex-start!important;
         flex-direction: column!important;

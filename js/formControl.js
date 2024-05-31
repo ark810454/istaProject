@@ -28,22 +28,29 @@ formComponent.addEventListener('submit',function(e){
         if(/\d/.test(name.value)){
             e.preventDefault()
             let errorCont=name.nextElementSibling
-            errorCont.textContent="Votre nom ne dois pas contenir de chiffre"
+            errorCont.textContent="Remplissez les champs"
             createAlertMessage('div')
         }
-        if(name.value==='' || name.value.trim()===''){
+        else if(name.value==='' || name.value.trim()===''){
             e.preventDefault()
             let errorCont=name.nextElementSibling
-            errorCont.textContent="Votre nom ne dois pas contenir de l'espace   "
+            errorCont.textContent=" Remplissez les champs  "
             createAlertMessage('div')
         }
+        else if(emailComponent.value===''|| emailComponent.value.trim()===''){
+            e.preventDefault()
+            let errorCont=emailComponent.nextElementSibling
+            errorCont.textContent="Remplissez les champs"
+            createAlertMessage('div')
+        }
+        else{}
     })
-    if(emailComponent.value===''|| emailComponent.value.trim()===''){
-        e.preventDefault()
-        let errorCont=emailComponent.nextElementSibling
-        errorCont.textContent="Votre nom ne dois pas contenir de l'espace"
-        createAlertMessage('div')
-    }
+    // if(emailComponent.value===''|| emailComponent.value.trim()===''){
+    //     e.preventDefault()
+    //     let errorCont=emailComponent.nextElementSibling
+    //     errorCont.textContent="Votre nom ne dois pas contenir de l'espace"
+    //     createAlertMessage('div')
+    // }
 
 })
 
@@ -55,20 +62,24 @@ function createAlertMessage(){
     `
     let el=document.createElement('div')
     el.setAttribute('class','errorMessage')
-    el.innerHTML=`${icon} Vos cordonnées ont des erreurs`
+    el.innerHTML=`<span id="clsError">${icon}</span> Vos cordonnées ont des erreurs`
     let styleAfter = window.getComputedStyle(el,'::after').getPropertyValue('width')
+    el.querySelector("#clsError").addEventListener('click',function(){
+        this.parentElement.style.display='none'
+    })
     setTimeout(()=>{
         el.style.display="none"
         document.querySelectorAll('.form-error').forEach(error=>{
             error.textContent=""
         })
         clearInterval(t)
-    },10000)
+    },5000)
     document.body.appendChild(el)
     console.log(styleAfter)
     let i=0
+
     let t=setInterval(()=>{
         i=i+10
         styleAfter=`${i}%`
-    },1000)
+    },500)
 }

@@ -1,6 +1,6 @@
 .aboutHeader{
-    height:30dvh!important;
-    background: linear-gradient(190deg,#D9D9D9,rgba(217, 217, 217, 0.1),#737373),url(../assets/collation-grade-ista.jpg)!important;
+    height:60dvh!important;
+    background: linear-gradient(200deg,#D9D9D9,rgba(217, 217, 217, 0.1),#737373),url(../assets/collation-grade-ista.jpg)!important;
     background-repeat: no-repeat!important;
     background-position: cover!important;
     background-size: 100% 100%!important;
@@ -158,6 +158,9 @@ li{
 .secondPl{
     position: relative;
 }
+.fistPl{
+    position: relative;
+}
 .bigTitle{
     font-family: var(--bebas_neue);
     font-size: 40px;
@@ -196,7 +199,33 @@ li{
         display: none;
     }
     .two{
-        display: none;
+        align-self:flex-end ;
+    }
+    p{
+        width: 70%;
+    }
+    .imageCont::before{
+        content: '';
+        background: url(../assets/arrow-1.png);
+        display: block;
+        width: 150px;
+        height: 50px;
+        background-position: cover;
+        background-size: 100%  100%;
+        background-repeat: no-repeats;
+        position: absolute;
+        left: -50% !important;
+        top: 20%;
+        transform: rotate(230deg);
+    
+    }
+    .bigText{
+        color:black;
+    }
+    .tree .bigText{
+        position: absolute !important;
+        bottom: 50% !important;
+        left: 10% !important;
     }
     .maincomponentStructure div{
         padding: 0px !important;
@@ -223,5 +252,31 @@ li{
     }
     p{
         text-align: justify;
+    }
+    .aboutHeader{
+        height:20dvh!important;}
+    .tree .bigText{
+        position: absolute !important;
+        bottom: 50% !important;
+        left: 40% !important;
+    }
+    .bigText{
+        color:transparent;
+    }
+    .two{
+        display: none;
+    }
+    p{
+        width: 100%;
+    }
+}
+
+@media screen and ( max-width:865px ) {
+    .mainContentAbout.containerLg{
+        width: 80%;
+    }
+    .mainContentAbout .bigTitle{
+        font-size: 27px;
+        text-wrap: wrap;
     }
 }
